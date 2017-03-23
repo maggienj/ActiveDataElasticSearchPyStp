@@ -37,4 +37,4 @@ You Win should be displayed. <br>
 
 (b) Access http://localhost:5000/tools/query.html <br> 
 You should be able to see the ActiveData Query Tool <br> 
-<img src=ADQtool.png> 
+<img src=ADQtool.PNG> 
