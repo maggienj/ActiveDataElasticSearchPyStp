@@ -1,4 +1,4 @@
-# ActiveData - ElasticSearch Py Stp
+# ActiveData - ElasticSearch Py Setup in Windows 10
 ActiveData - ElasticSearch17 and Py2.7 setup
 
 Step-1: Install python2.7 <br>
