@@ -1,9 +1,9 @@
 # ActiveDataElasticSearchPyStp
 ActiveData - ElasticSearch17 and Py2.7 setup
 
-Step-1: Install python2.7 
-In windows powershell
- new-alias python27 c:\python27\python.exe
+Step-1: Install python2.7 <br>
+In windows powershell <br>
+ new-alias python27 c:\python27\python.exe <br>
  cd c:\ActiveData
  set PYTHONPATH=.
  python27 -m pip install --upgrade pip
