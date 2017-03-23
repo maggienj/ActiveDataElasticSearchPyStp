@@ -9,6 +9,7 @@ In windows powershell <br>
  python27 -m pip install --upgrade pip <br> 
  python27 -m pip install -r requirements.txt <br> 
  <img src=powershell_python27_req.PNG> <br>
+ <img src=python27_lib_installed.PNG> <br>
 
 Step-2: Install ES1.7 using this link <br>  
 https://github.com/rgl/elasticsearch-setup/releases?after=v2.2.1
