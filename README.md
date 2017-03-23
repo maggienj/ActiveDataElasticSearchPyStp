@@ -11,7 +11,7 @@ In windows powershell
 
 Step-2: Install ES1.7 using this link
 https://github.com/rgl/elasticsearch-setup/releases?after=v2.2.1
-( The ES17 from https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-0 ....  was quirky and the service was giving errs to start. so used the above step to easily start the ES service )
+( The ES17 from https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-0 ....  was quirky and the service was giving errs to start. so used this https://github.com/rgl/elasticsearch-setup/releases?after=v2.2.1  to easily start the ES service )
 Step-3: modify config file in ES to add these lines to the top
 script.inline: on
 script.indexed: on
