@@ -1,0 +1,2595 @@
+$ python27 -m unittest discover -v -s tests
+test_bad_percentile (test_agg_ops.TestAggOps) ... 2017-03-23 03:22:40 -
+********************************************************************************
+** No TEST_CONFIG environment variable to point to config file.  Using /tests/config/elasticsearch.json
+********************************************************************************
+2017-03-23 03:22:40 -
+********************************************************************************
+** No TEST_CONFIG environment variable to point to config file.  Using /tests/config/elasticsearch.json
+********************************************************************************
+2017-03-23 03:22:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:40 - response: {"cluster_name":"maggie_dev","version":9,"master_node":"7s4...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:40 - GET http://localhost:9200/
+2017-03-23 03:22:40 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:22:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:40 - response: {"cluster_name":"maggie_dev","version":9,"master_node":"7s4...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:40 - response: {"cluster_name":"maggie_dev","version":9,"master_node":"7s4...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:40 -
+http://localhost:9200/testing_000_h20170323_032240:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:40 - POST http://localhost:9200/testing_000_h20170323_032240
+2017-03-23 03:22:41 - response: {"acknowledged":true}
+2017-03-23 03:22:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:41 - response: {"cluster_name":"maggie_dev","version":11,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:41.012Z"}}]}},"allocations":[]}
+2017-03-23 03:22:41 -
+********************************************************************************
+** Made new index "testing_000_h20170323_032240"
+********************************************************************************
+2017-03-23 03:22:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:41 - response: {"cluster_name":"maggie_dev","version":12,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:41.012Z"}}]}},"allocations":[]}
+2017-03-23 03:22:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_000_h20170323_032240/test_result is on
+********************************************************************************
+2017-03-23 03:22:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:41 - response: {"cluster_name":"maggie_dev","version":13,"master_node":"7s...<snip>...index":"testing_000_h20170323_032240"}]}},"allocations":[]}
+2017-03-23 03:22:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:41 - response: {"cluster_name":"maggie_dev","version":13,"master_node":"7s...<snip>...index":"testing_000_h20170323_032240"}]}},"allocations":[]}
+2017-03-23 03:22:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_000_h20170323_032240/test_result is on
+********************************************************************************
+2017-03-23 03:22:41 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_000_h20170323_032240", "alias": "testing_000_h"}}]}
+2017-03-23 03:22:41 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:41 - response: {"acknowledged":true}
+2017-03-23 03:22:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:41 - response: {"cluster_name":"maggie_dev","version":14,"master_node":ok
+test_cardinality (test_agg_ops.TestAggOps) ... "7s...<snip>...index":"testing_000_h20170323_032240"}]}},"allocations":[]}
+2017-03-23 03:22:41 - Timer start: Add 30.0 documents to testing_000_h20170323_032240
+2017-03-23 03:22:41 -
+http://localhost:9200/testing_000_h20170323_032240/test_result/_bulk:
+        {"index":{"_id": "36D08E1ABD75AA7C2B41836A65C0E551E61FE2FD"}}
+        {"a": 0}
+        {"index":{"_id": "7043CDA24EE09AA24F0633AEBFAB144F9B97B7A5"}}
+        {"a": 1}
+        {"index":{"_id": "75567CCC090D6491ACAE6B50F3C8912C62BB1B6C"}}
+        {"a": 4}
+        {"index":{"_id": "CFAB54778BC350B411BF57F9CFF584056CAED6CF"}}
+        {"a": 9}
+        {"index":{"_id":
+2017-03-23 03:22:41 - POST http://localhost:9200/testing_000_h20170323_032240/test_result/_bulk
+2017-03-23 03:22:41 - response: {"took":31,"errors":false,"items":[{"index":{"_index":"testing_000_h20170323_032240","_type":"test_result","_id":"36D08E1ABD75AA7C
+2017-03-23 03:22:41 - Timer end  : Add 30.0 documents to testing_000_h20170323_032240 (took 0.052 seconds)
+2017-03-23 03:22:41 -
+http://localhost:9200/testing_000_h20170323_032240/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:41 - POST http://localhost:9200/testing_000_h20170323_032240/_flush
+2017-03-23 03:22:42 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:22:43 - Deleting index testing_000_h20170323_032240
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":15,"master_node":"7s...<snip>...index":"testing_000_h20170323_032240"}]}},"allocations":[]}
+2017-03-23 03:22:43 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_000_h20170323_032240", "alias": "testing_000_h"}}]}
+2017-03-23 03:22:43 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:43 - response: {"acknowledged":true}
+2017-03-23 03:22:43 - delete response {"acknowledged": true}
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":17,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:43 -
+http://localhost:9200/testing_001_h20170323_032243:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:43 - POST http://localhost:9200/testing_001_h20170323_032243
+2017-03-23 03:22:43 - response: {"acknowledged":true}
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":18,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:43.601Z"}}]}},"allocations":[]}
+2017-03-23 03:22:43 -
+********************************************************************************
+** Made new index "testing_001_h20170323_032243"
+********************************************************************************
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":19,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:43.601Z"}}]}},"allocations":[]}
+2017-03-23 03:22:43 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_001_h20170323_032243/test_result is on
+********************************************************************************
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":20,"master_node":"7s...<snip>...index":"testing_001_h20170323_032243"}]}},"allocations":[]}
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":20,"master_node":"7s...<snip>...index":"testing_001_h20170323_032243"}]}},"allocations":[]}
+2017-03-23 03:22:43 -
+****************************************************************************ok
+test_many_aggs_on_one_column (test_agg_ops.TestAggOps) ... ****
+** elasticsearch debugging for http://localhost:9200/testing_001_h20170323_032243/test_result is on
+********************************************************************************
+2017-03-23 03:22:43 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_001_h20170323_032243", "alias": "testing_001_h"}}]}
+2017-03-23 03:22:43 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:43 - response: {"acknowledged":true}
+2017-03-23 03:22:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:43 - response: {"cluster_name":"maggie_dev","version":21,"master_node":"7s...<snip>...index":"testing_001_h20170323_032243"}]}},"allocations":[]}
+2017-03-23 03:22:43 - Timer start: Add 7.0 documents to testing_001_h20170323_032243
+2017-03-23 03:22:43 -
+http://localhost:9200/testing_001_h20170323_032243/test_result/_bulk:
+        {"index":{"_id": "F05391D2E9AFB0A86136A23272EC7C9DEF20CE59"}}
+        {"a": 1, "b": "x"}
+        {"index":{"_id": "91327DD54A2C6BC6D426F70BC59F7A07190BBDA8"}}
+        {"a": 1, "b": "x"}
+        {"index":{"_id": "877BA18CCCF764BEBDB3A5E6E3F61CD771B32319"}}
+        {"a": 2, "b": "x"}
+        {"index":{"_id": "02750BE626A2911498C2AC8EAA8711590273EA9
+2017-03-23 03:22:43 - POST http://localhost:9200/testing_001_h20170323_032243/test_result/_bulk
+2017-03-23 03:22:43 - response: {"took":28,"errors":false,"items":[{"index":{"_index":"testing_001_h20170323_032243","_type":"test_result","_id":"F05391D2E9AFB0A8
+2017-03-23 03:22:43 - Timer end  : Add 7.0 documents to testing_001_h20170323_032243 (took 0.046 seconds)
+2017-03-23 03:22:43 -
+http://localhost:9200/testing_001_h20170323_032243/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:43 - POST http://localhost:9200/testing_001_h20170323_032243/_flush
+2017-03-23 03:22:44 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:22:45 - Test result compares well
+2017-03-23 03:22:45 - Deleting index testing_001_h20170323_032243
+2017-03-23 03:22:45 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:45 - response: {"cluster_name":"maggie_dev","version":22,"master_node":"7s...<snip>...index":"testing_001_h20170323_032243"}]}},"allocations":[]}
+2017-03-23 03:22:45 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_001_h20170323_032243", "alias": "testing_001_h"}}]}
+2017-03-23 03:22:45 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:45 - response: {"acknowledged":true}
+2017-03-23 03:22:46 - delete response {"acknowledged": true}
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":24,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:46 -
+http://localhost:9200/testing_002_h20170323_032246:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:46 - POST http://localhost:9200/testing_002_h20170323_032246
+2017-03-23 03:22:46 - response: {"acknowledged":true}
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":25,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:46.102Z"}}]}},"allocations":[]}
+2017-03-23 03:22:46 -
+********************************************************************************
+** Made new index "testing_002_h20170323_032246"
+********************************************************************************
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":26,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:46.102Z"}}]}},"allocations":[]}
+2017-03-23 03:22:46 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_002_h20170323_032246/test_resuok
+test_many_aggs_on_value (test_agg_ops.TestAggOps) ... lt is on
+********************************************************************************
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":26,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:46.102Z"}}]}},"allocations":[]}
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":26,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:46.102Z"}}]}},"allocations":[]}
+2017-03-23 03:22:46 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_002_h20170323_032246/test_result is on
+********************************************************************************
+2017-03-23 03:22:46 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_002_h20170323_032246", "alias": "testing_002_h"}}]}
+2017-03-23 03:22:46 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:46 - response: {"acknowledged":true}
+2017-03-23 03:22:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:46 - response: {"cluster_name":"maggie_dev","version":28,"master_node":"7s...<snip>...index":"testing_002_h20170323_032246"}]}},"allocations":[]}
+2017-03-23 03:22:46 - Timer start: Add 30.0 documents to testing_002_h20170323_032246
+2017-03-23 03:22:46 -
+http://localhost:9200/testing_002_h20170323_032246/test_result/_bulk:
+        {"index":{"_id": "D5E1D31F79D15F61F4BCC0C9972F25302EC6684E"}}
+        {"a": 0}
+        {"index":{"_id": "0807DA9F7F5A7AF3DA8D5EADDE595153264AD516"}}
+        {"a": 2}
+        {"index":{"_id": "CAB8CA9AF4261CB175C442B9D53FF61DA832623E"}}
+        {"a": 4}
+        {"index":{"_id": "08919956CAFF057640173C43603617E896FE9F1E"}}
+        {"a": 6}
+        {"index":{"_id":
+2017-03-23 03:22:46 - POST http://localhost:9200/testing_002_h20170323_032246/test_result/_bulk
+2017-03-23 03:22:46 - response: {"took":57,"errors":false,"items":[{"index":{"_index":"testing_002_h20170323_032246","_type":"test_result","_id":"D5E1D31F79D15F61
+2017-03-23 03:22:46 - Timer end  : Add 30.0 documents to testing_002_h20170323_032246 (took 0.078 seconds)
+2017-03-23 03:22:46 -
+http://localhost:9200/testing_002_h20170323_032246/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:46 - POST http://localhost:9200/testing_002_h20170323_032246/_flush
+2017-03-23 03:22:47 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:22:48 - Test result compares well
+2017-03-23 03:22:49 - Test result compares well
+2017-03-23 03:22:49 - Deleting index testing_002_h20170323_032246
+2017-03-23 03:22:49 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:49 - response: {"cluster_name":"maggie_dev","version":29,"master_node":"7s...<snip>...index":"testing_002_h20170323_032246"}]}},"allocations":[]}
+2017-03-23 03:22:49 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_002_h20170323_032246", "alias": "testing_002_h"}}]}
+2017-03-23 03:22:49 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:49 - response: {"acknowledged":true}
+2017-03-23 03:22:49 - delete response {"acknowledged": true}
+2017-03-23 03:22:49 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":31,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 -
+http://localhost:9200/testing_003_h20170323_032250:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:50 - POST http://localhost:9200/testing_003_h20170323_032250
+2017-03-23 03:22:50 - response: {"acknowledged":true}
+2017-03-23 03:22:50 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":33,"master_node":"7s...<snip>..."active_data_requests2ok
+test_max (test_agg_ops.TestAggOps) ... 0170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 -
+********************************************************************************
+** Made new index "testing_003_h20170323_032250"
+********************************************************************************
+2017-03-23 03:22:50 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":33,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_003_h20170323_032250/test_result is on
+********************************************************************************
+2017-03-23 03:22:50 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":34,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":34,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_003_h20170323_032250/test_result is on
+********************************************************************************
+2017-03-23 03:22:50 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_003_h20170323_032250", "alias": "testing_003_h"}}]}
+2017-03-23 03:22:50 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:50 - response: {"acknowledged":true}
+2017-03-23 03:22:50 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:50 - response: {"cluster_name":"maggie_dev","version":35,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:50 - Timer start: Add 30.0 documents to testing_003_h20170323_032250
+2017-03-23 03:22:50 -
+http://localhost:9200/testing_003_h20170323_032250/test_result/_bulk:
+        {"index":{"_id": "885CE98F4CC2C6F43C87460071073A5B1A37A2FF"}}
+        {"$value": 0}
+        {"index":{"_id": "64791EB329AB4CD0FAF0BD2E9ACA696E003B06AA"}}
+        {"$value": 2}
+        {"index":{"_id": "4AF6A815F35AAA3C0739E8F9398ED7360ED60576"}}
+        {"$value": 4}
+        {"index":{"_id": "9BD87E137DB3F3DB19103605AB0893CC6CCF7C4B"}}
+        {"$value":
+2017-03-23 03:22:50 - POST http://localhost:9200/testing_003_h20170323_032250/test_result/_bulk
+2017-03-23 03:22:50 - response: {"took":13,"errors":false,"items":[{"index":{"_index":"testing_003_h20170323_032250","_type":"test_result","_id":"885CE98F4CC2C6F4
+2017-03-23 03:22:50 - Timer end  : Add 30.0 documents to testing_003_h20170323_032250 (took 0.031 seconds)
+2017-03-23 03:22:50 -
+http://localhost:9200/testing_003_h20170323_032250/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:50 - POST http://localhost:9200/testing_003_h20170323_032250/_flush
+2017-03-23 03:22:50 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:22:52 - Test result compares well
+2017-03-23 03:22:53 - Test result compares well
+2017-03-23 03:22:53 - Deleting index testing_003_h20170323_032250
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":36,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:53 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_003_h20170323_032250", "alias": "testing_003_h"}}]}
+2017-03-23 03:22:53 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:53 - response: {"acknowledged":true}
+2017-03-23 03:22:53 - delete response {"acknowledged": true}
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":38,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:53 -
+http://localhost:9200/testing_004_h20170323_032253:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:53 - POST http://localhost:9200/testing_004_h20170323_032253
+2017-03-23 03:22:53 - response: {"acknowledged":true}
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":40,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:53.513Z"}}]}},"allocations":[]}
+2017-03-23 03:22:53 -
+********************************************************************************
+** Made new index "testing_004_h20170323_032253"
+********************************************************************************
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":40,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:22:53.513Z"}}]}},"allocations":[]}
+2017-03-23 03:22:53 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_004_h20170323_032253/test_result is on
+********************************************************************************
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":41,"master_node":"7s...<snip>...index":"testing_004_h20170323_032253"}]}},"allocations":[]}
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":41,"master_node":"7s...<snip>...index":"testing_004_h20170323_032253"}]}},"allocations":[]}
+2017-03-23 03:22:53 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_004_h20170323_032253/test_result is on
+********************************************************************************
+2017-03-23 03:22:53 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_004_h20170323_032253", "alias": "testing_004_h"}}]}
+2017-03-23 03:22:53 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:53 - response: {"acknowledged":true}
+2017-03-23 03:22:53 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:53 - response: {"cluster_name":"maggie_dev","version":42,"master_node":"7s...<snip>...index":"testing_004_h20170323_032253"}]}},"allocations":[]}
+2017-03-23 03:22:53 - Timer start: Add 30.0 documents to testing_004_h20170323_032253
+2017-03-23 03:22:53 -
+http://localhost:9200/testing_004_h20170323_032253/test_result/_bulk:
+        {"index":{"_id": "E94124792D2F44E9C898D6D4F92696CD6839D6F3"}}
+        {"a": 0}
+        {"index":{"_id": "A80D373F213EAAAA1155617936A27D5DE26129A2"}}
+        {"a": 2}
+        {"index":{"_id": "CBAF8BF33B084E32DAA03FAF7B2A366BA08BFB62"}}
+        {"a": 4}
+        {"index":{"_id": "6A7A54C1D34BCDD46A98261BAC2EACFD90A80A61"}}
+        {"a": 6}
+        {"index":{"_id":
+2017-03-23 03:22:53 - POST http://localhost:9200/testing_004_h20170323_032253/test_result/_bulk
+2017-03-23 03:22:53 - response: {"took":23,"errors":false,"items":[{"index":{"_index":"testing_004_h20170323_032253","_type":"test_result","_id":"E94124792D2F44E9
+2017-03-23 03:22:53 - Timer end  : Add 30.0 documents to testing_004_h20170323_032253 (took 0.045 seconds)
+2017-03-23 03:22:53 -
+http://localhost:9200/testing_004_h20170323_032253/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:53 - POST http://localhost:9200/testing_004_h20170323_032253/_flush
+2017-03-23 03:22:54 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:22:55 - Test result compares well
+2017-03-23 03:22:56 - Test result compares well
+2017-03-23 03:22:57 - Test result compares well
+2017-03-23 03:22:57 - Deleting index testing_004_h20170323_032253
+2017-03-23 03:22:57 - GET http://localhook
+test_max_object_on_value (test_agg_ops.TestAggOps) ... st:9200/_cluster/state
+2017-03-23 03:22:57 - response: {"cluster_name":"maggie_dev","version":43,"master_node":"7s...<snip>...index":"testing_004_h20170323_032253"}]}},"allocations":[]}
+2017-03-23 03:22:57 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_004_h20170323_032253", "alias": "testing_004_h"}}]}
+2017-03-23 03:22:57 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:57 - response: {"acknowledged":true}
+2017-03-23 03:22:58 - delete response {"acknowledged": true}
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":45,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 -
+http://localhost:9200/testing_005_h20170323_032258:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:22:58 - POST http://localhost:9200/testing_005_h20170323_032258
+2017-03-23 03:22:58 - response: {"acknowledged":true}
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":46,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 -
+********************************************************************************
+** Made new index "testing_005_h20170323_032258"
+********************************************************************************
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":46,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_005_h20170323_032258/test_result is on
+********************************************************************************
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":47,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":47,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_005_h20170323_032258/test_result is on
+********************************************************************************
+2017-03-23 03:22:58 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_005_h20170323_032258", "alias": "testing_005_h"}}]}
+2017-03-23 03:22:58 - POST http://localhost:9200/_aliases
+2017-03-23 03:22:58 - response: {"acknowledged":true}
+2017-03-23 03:22:58 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:22:58 - response: {"cluster_name":"maggie_dev","version":49,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:22:58 - Timer start: Add 30.0 documents to testing_005_h20170323_032258
+2017-03-23 03:22:58 -
+http://localhost:9200/testing_005_h20170323_032258/test_result/_bulk:
+        {"index":{"_id": "7E48F87BBF4F4F8AE3EBEFD76F6E8EBA8E6C1A82"}}
+        {"$object": ".", "a": {"$value": 0}}
+        {"index":{"_id": "03F7D968B98EE798E74B29EBA9E28CCA6CB50BA4"}}
+        {"$object": ".", "a": {"$value": 2}}
+        {"index":{"_id": "18AFBFE35E6DEF1FDB4D95067516B19DEC468846"}}
+        {"$object": ".", "a": {"$value": 4}}
+        {"i
+2017-03-23 03:22:58 - POST http://localhost:9200/testing_005_h20170323_032258/test_result/_bulk
+2017-03-23 03:22:58 - response: {"took":29,"errors":false,"items":[{"indexok
+test_max_on_value (test_agg_ops.TestAggOps) ... ":{"_index":"testing_005_h20170323_032258","_type":"test_result","_id":"7E48F87BBF4F4F8A
+2017-03-23 03:22:58 - Timer end  : Add 30.0 documents to testing_005_h20170323_032258 (took 0.054 seconds)
+2017-03-23 03:22:58 -
+http://localhost:9200/testing_005_h20170323_032258/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:22:58 - POST http://localhost:9200/testing_005_h20170323_032258/_flush
+2017-03-23 03:22:59 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:00 - Test result compares well
+2017-03-23 03:23:01 - Test result compares well
+2017-03-23 03:23:02 - Test result compares well
+2017-03-23 03:23:02 - Deleting index testing_005_h20170323_032258
+2017-03-23 03:23:02 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:02 - response: {"cluster_name":"maggie_dev","version":50,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:02 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_005_h20170323_032258", "alias": "testing_005_h"}}]}
+2017-03-23 03:23:02 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:02 - response: {"acknowledged":true}
+2017-03-23 03:23:02 - delete response {"acknowledged": true}
+2017-03-23 03:23:02 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:02 - response: {"cluster_name":"maggie_dev","version":52,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:02 -
+http://localhost:9200/testing_006_h20170323_032302:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:02 - POST http://localhost:9200/testing_006_h20170323_032302
+2017-03-23 03:23:03 - response: {"acknowledged":true}
+2017-03-23 03:23:03 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:03 - response: {"cluster_name":"maggie_dev","version":54,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:02.916Z"}}]}},"allocations":[]}
+2017-03-23 03:23:03 -
+********************************************************************************
+** Made new index "testing_006_h20170323_032302"
+********************************************************************************
+2017-03-23 03:23:03 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:03 - response: {"cluster_name":"maggie_dev","version":54,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:02.916Z"}}]}},"allocations":[]}
+2017-03-23 03:23:03 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_006_h20170323_032302/test_result is on
+********************************************************************************
+2017-03-23 03:23:03 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:03 - response: {"cluster_name":"maggie_dev","version":55,"master_node":"7s...<snip>...index":"testing_006_h20170323_032302"}]}},"allocations":[]}
+2017-03-23 03:23:03 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:03 - response: {"cluster_name":"maggie_dev","version":55,"master_node":"7s...<snip>...index":"testing_006_h20170323_032302"}]}},"allocations":[]}
+2017-03-23 03:23:03 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_006_h20170323_032302/test_result is on
+********************************************************************************
+2017-03-23 03:23:03 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_006_h20170323_032302", "alias": "testing_006_h"}}]}
+2017-03-23 03:23:03 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:03 - response: {"acknowledged":true}
+2017-03-23 03:23:03 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:03 - response: {"cluster_name":"maggie_dev","version":56,"masterok
+test_median (test_agg_ops.TestAggOps) ... _node":"7s...<snip>...index":"testing_006_h20170323_032302"}]}},"allocations":[]}
+2017-03-23 03:23:03 - Timer start: Add 30.0 documents to testing_006_h20170323_032302
+2017-03-23 03:23:03 -
+http://localhost:9200/testing_006_h20170323_032302/test_result/_bulk:
+        {"index":{"_id": "DC733BA406C6A7D2285B291DD12592C06E8F9B27"}}
+        {"$object": ".", "a": {"$value": 0}}
+        {"index":{"_id": "B2FF96EEF63590A3ED516F2869C9F26CEFE09F46"}}
+        {"$object": ".", "a": {"$value": 2}}
+        {"index":{"_id": "20FDFFA542CE903F098DEB2D28FABC23C8D4BDC6"}}
+        {"$object": ".", "a": {"$value": 4}}
+        {"i
+2017-03-23 03:23:03 - POST http://localhost:9200/testing_006_h20170323_032302/test_result/_bulk
+2017-03-23 03:23:03 - response: {"took":33,"errors":false,"items":[{"index":{"_index":"testing_006_h20170323_032302","_type":"test_result","_id":"DC733BA406C6A7D2
+2017-03-23 03:23:03 - Timer end  : Add 30.0 documents to testing_006_h20170323_032302 (took 0.058 seconds)
+2017-03-23 03:23:03 -
+http://localhost:9200/testing_006_h20170323_032302/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:03 - POST http://localhost:9200/testing_006_h20170323_032302/_flush
+2017-03-23 03:23:03 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:04 - Test result compares well
+2017-03-23 03:23:06 - Test result compares well
+2017-03-23 03:23:07 - Test result compares well
+2017-03-23 03:23:07 - Deleting index testing_006_h20170323_032302
+2017-03-23 03:23:07 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:07 - response: {"cluster_name":"maggie_dev","version":57,"master_node":"7s...<snip>...index":"testing_006_h20170323_032302"}]}},"allocations":[]}
+2017-03-23 03:23:07 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_006_h20170323_032302", "alias": "testing_006_h"}}]}
+2017-03-23 03:23:07 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:07 - response: {"acknowledged":true}
+2017-03-23 03:23:07 - delete response {"acknowledged": true}
+2017-03-23 03:23:07 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:07 - response: {"cluster_name":"maggie_dev","version":59,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:07 -
+http://localhost:9200/testing_007_h20170323_032307:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:07 - POST http://localhost:9200/testing_007_h20170323_032307
+2017-03-23 03:23:08 - response: {"acknowledged":true}
+2017-03-23 03:23:08 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:08 - response: {"cluster_name":"maggie_dev","version":61,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:08 -
+********************************************************************************
+** Made new index "testing_007_h20170323_032307"
+********************************************************************************
+2017-03-23 03:23:08 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:08 - response: {"cluster_name":"maggie_dev","version":62,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:08 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_007_h20170323_032307/test_result is on
+********************************************************************************
+2017-03-23 03:23:08 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:08 - response: {"cluster_name":"maggie_dev","version":63,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:08 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:08 - response: {"cluster_name":"maggie_dev","version":63,"master_node":"7s...<snip>..."active_daok
+test_median_on_value (test_agg_ops.TestAggOps) ... ta_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:08 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_007_h20170323_032307/test_result is on
+********************************************************************************
+2017-03-23 03:23:08 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_007_h20170323_032307", "alias": "testing_007_h"}}]}
+2017-03-23 03:23:08 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:08 - response: {"acknowledged":true}
+2017-03-23 03:23:08 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:08 - response: {"cluster_name":"maggie_dev","version":64,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:08 - Timer start: Add 30.0 documents to testing_007_h20170323_032307
+2017-03-23 03:23:08 -
+http://localhost:9200/testing_007_h20170323_032307/test_result/_bulk:
+        {"index":{"_id": "CD2AE73377EEFDCABE7A9F86847BE1AE164442BE"}}
+        {"a": 0}
+        {"index":{"_id": "7883658EDB24CC6150CFD4873D3A5BA7F16B9FA5"}}
+        {"a": 1}
+        {"index":{"_id": "5AB0F9874E2F0A6F5F9C785E06B3818718CC25B4"}}
+        {"a": 4}
+        {"index":{"_id": "A39C1ECC65E8A997F61E1620519115626433C05A"}}
+        {"a": 9}
+        {"index":{"_id":
+2017-03-23 03:23:08 - POST http://localhost:9200/testing_007_h20170323_032307/test_result/_bulk
+2017-03-23 03:23:08 - response: {"took":20,"errors":false,"items":[{"index":{"_index":"testing_007_h20170323_032307","_type":"test_result","_id":"CD2AE73377EEFDCA
+2017-03-23 03:23:08 - Timer end  : Add 30.0 documents to testing_007_h20170323_032307 (took 0.040 seconds)
+2017-03-23 03:23:08 -
+http://localhost:9200/testing_007_h20170323_032307/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:08 - POST http://localhost:9200/testing_007_h20170323_032307/_flush
+2017-03-23 03:23:08 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:09 - Test result compares well
+2017-03-23 03:23:11 - Test result compares well
+2017-03-23 03:23:12 - Test result compares well
+2017-03-23 03:23:12 - Deleting index testing_007_h20170323_032307
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":65,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:12 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_007_h20170323_032307", "alias": "testing_007_h"}}]}
+2017-03-23 03:23:12 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:12 - response: {"acknowledged":true}
+2017-03-23 03:23:12 - delete response {"acknowledged": true}
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":67,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:12 -
+http://localhost:9200/testing_008_h20170323_032312:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:12 - POST http://localhost:9200/testing_008_h20170323_032312
+2017-03-23 03:23:12 - response: {"acknowledged":true}
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":70,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:12.576Z"}}]}},"allocations":[]}
+2017-03-23 03:23:12 -
+********************************************************************************
+** Made new index "testing_008_h20170323_032312"
+********************************************************************************
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":71,"master_node":"7s...<snip>...index"ok
+test_percentile (test_agg_ops.TestAggOps) ... :"testing_008_h20170323_032312"}]}},"allocations":[]}
+2017-03-23 03:23:12 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_008_h20170323_032312/test_result is on
+********************************************************************************
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":71,"master_node":"7s...<snip>...index":"testing_008_h20170323_032312"}]}},"allocations":[]}
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":71,"master_node":"7s...<snip>...index":"testing_008_h20170323_032312"}]}},"allocations":[]}
+2017-03-23 03:23:12 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_008_h20170323_032312/test_result is on
+********************************************************************************
+2017-03-23 03:23:12 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_008_h20170323_032312", "alias": "testing_008_h"}}]}
+2017-03-23 03:23:12 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:12 - response: {"acknowledged":true}
+2017-03-23 03:23:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:12 - response: {"cluster_name":"maggie_dev","version":72,"master_node":"7s...<snip>...index":"testing_008_h20170323_032312"}]}},"allocations":[]}
+2017-03-23 03:23:12 - Timer start: Add 30.0 documents to testing_008_h20170323_032312
+2017-03-23 03:23:12 -
+http://localhost:9200/testing_008_h20170323_032312/test_result/_bulk:
+        {"index":{"_id": "E8A07F248B549456D98CC80BBDA7DB818E855350"}}
+        {"$value": 0}
+        {"index":{"_id": "84156BB9336698227C8A7D220F85BCCE28C11D8D"}}
+        {"$value": 1}
+        {"index":{"_id": "6C190524167F409A0CD63D0F16DDC1A53BFF5A47"}}
+        {"$value": 4}
+        {"index":{"_id": "3FB9A0DEDCFD32ABDD0318E2A9A805BEE62BEE26"}}
+        {"$value":
+2017-03-23 03:23:12 - POST http://localhost:9200/testing_008_h20170323_032312/test_result/_bulk
+2017-03-23 03:23:12 - response: {"took":10,"errors":false,"items":[{"index":{"_index":"testing_008_h20170323_032312","_type":"test_result","_id":"E8A07F248B549456
+2017-03-23 03:23:12 - Timer end  : Add 30.0 documents to testing_008_h20170323_032312 (took 0.029 seconds)
+2017-03-23 03:23:12 -
+http://localhost:9200/testing_008_h20170323_032312/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:12 - POST http://localhost:9200/testing_008_h20170323_032312/_flush
+2017-03-23 03:23:13 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:14 - Test result compares well
+2017-03-23 03:23:15 - Test result compares well
+2017-03-23 03:23:16 - Test result compares well
+2017-03-23 03:23:16 - Deleting index testing_008_h20170323_032312
+2017-03-23 03:23:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:16 - response: {"cluster_name":"maggie_dev","version":73,"master_node":"7s...<snip>...index":"testing_008_h20170323_032312"}]}},"allocations":[]}
+2017-03-23 03:23:16 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_008_h20170323_032312", "alias": "testing_008_h"}}]}
+2017-03-23 03:23:16 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:16 - response: {"acknowledged":true}
+2017-03-23 03:23:17 - delete response {"acknowledged": true}
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":75,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:17 -
+http://localhost:9200/testing_009_h20170323_032317:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:17 - POST http://localhost:9200/testing_009_h20170323_032317
+2017-03-23 03:23:17 - response: {"acknowledged":true}
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":77,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:17 -
+********************************************************************************
+** Made new index "testing_009_h20170323_032317"
+********************************************************************************
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":77,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:17 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_009_h20170323_032317/test_result is on
+********************************************************************************
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":77,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":78,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:17 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_009_h20170323_032317/test_result is on
+********************************************************************************
+2017-03-23 03:23:17 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_009_h20170323_032317", "alias": "testing_009_h"}}]}
+2017-03-23 03:23:17 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:17 - response: {"acknowledged":true}
+2017-03-23 03:23:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:17 - response: {"cluster_name":"maggie_dev","version":80,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:17 - Timer start: Add 30.0 documents to testing_009_h20170323_032317
+2017-03-23 03:23:17 -
+http://localhost:9200/testing_009_h20170323_032317/test_result/_bulk:
+        {"index":{"_id": "811DFC60B86DEB6C88C2AE1B43785B47A7F7857B"}}
+        {"a": 0}
+        {"index":{"_id": "F6E1EADCFA5C6F2E8C2FC1B7A4E84159E3E98E23"}}
+        {"a": 1}
+        {"index":{"_id": "96ABE3FBB434DD3804E616A43BA4DA50B5706EE2"}}
+        {"a": 4}
+        {"index":{"_id": "078836900FE6CB55DF76031B227DA2C932EDB156"}}
+        {"a": 9}
+        {"index":{"_id":
+2017-03-23 03:23:17 - POST http://localhost:9200/testing_009_h20170323_032317/test_result/_bulk
+2017-03-23 03:23:17 - response: {"took":13,"errors":false,"items":[{"index":{"_index":"testing_009_h20170323_032317","_type":"test_result","_id":"811DFC60B86DEB6C
+2017-03-23 03:23:17 - Timer end  : Add 30.0 documents to testing_009_h20170323_032317 (took 0.033 seconds)
+2017-03-23 03:23:17 -
+http://localhost:9200/testing_009_h20170323_032317/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:17 - POST http://localhost:9200/testing_009_h20170323_032317/_flush
+2017-03-23 03:23:17 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:19 - Test result compares well
+2017-03-23 03:23:20 - Test result compares well
+2017-03-23 03:23:21 - Test result compares well
+2017-03-23 03:23:21 - Deleting index testing_009_h20170323_032317
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":81,"master_node":"7s...<snip>...index":"testing_009_h20170323_032317"}]}},"allocations":[]}
+2017-03-23 03:23:21 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_009_h20170323_032317", "alias": "testing_009_h"}}]}
+2017-03-23 03:23:21 - POST http://localhost:9200/_aliases
+2ok
+test_simplest (test_agg_ops.TestAggOps) ... 017-03-23 03:23:21 - response: {"acknowledged":true}
+2017-03-23 03:23:21 - delete response {"acknowledged": true}
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":83,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:21 -
+http://localhost:9200/testing_010_h20170323_032321:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:21 - POST http://localhost:9200/testing_010_h20170323_032321
+2017-03-23 03:23:21 - response: {"acknowledged":true}
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":85,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:21 -
+********************************************************************************
+** Made new index "testing_010_h20170323_032321"
+********************************************************************************
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":85,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:21 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_010_h20170323_032321/test_result is on
+********************************************************************************
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":86,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:21 - response: {"cluster_name":"maggie_dev","version":86,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:21 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_010_h20170323_032321/test_result is on
+********************************************************************************
+2017-03-23 03:23:21 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_010_h20170323_032321", "alias": "testing_010_h"}}]}
+2017-03-23 03:23:21 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:21 - response: {"acknowledged":true}
+2017-03-23 03:23:21 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:22 - response: {"cluster_name":"maggie_dev","version":87,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:22 - Timer start: Add 30.0 documents to testing_010_h20170323_032321
+2017-03-23 03:23:22 -
+http://localhost:9200/testing_010_h20170323_032321/test_result/_bulk:
+        {"index":{"_id": "C780D03E819EB3D63F438DDF3A428D20B1BC94AD"}}
+        {"a": 0}
+        {"index":{"_id": "23FADC93C37554E0D175B874112B4D139B2F1FD7"}}
+        {"a": 1}
+        {"index":{"_id": "0F4BA7BB91A9D3817E806C80CDD59A0401906A23"}}
+        {"a": 2}
+        {"index":{"_id": "E6C9A06ECB1A57BFF41B9E11B4AB9BD07E12D491"}}
+        {"a": 3}
+        {"index":{"_id":
+2017-03-23 03:23:22 - POST http://localhost:9200/testing_010_h20170323_032321/test_result/_bulk
+2017-03-23 03:23:22 - response: {"took":20,"errors":false,"items":[{"index":{"_index":"testing_010_h20170323_032321","_type":"test_result","_id":"C780D03E819EB3D6
+2017-03-23 03:23:22 - Timer end  : Add 30.0 documents to testing_010_h20170323_032321 (took 0.039 seconds)
+2017-03-23 03:23:22 -
+http://localhost:9200/testing_010_h20170323_032321/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:22 - POST http://localhost:9200/testing_010_h20170323_0ok
+test_simplest_on_value (test_agg_ops.TestAggOps) ... 32321/_flush
+2017-03-23 03:23:22 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:23 - Test result compares well
+2017-03-23 03:23:24 - Test result compares well
+2017-03-23 03:23:26 - Test result compares well
+2017-03-23 03:23:26 - Deleting index testing_010_h20170323_032321
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":88,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:26 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_010_h20170323_032321", "alias": "testing_010_h"}}]}
+2017-03-23 03:23:26 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:26 - response: {"acknowledged":true}
+2017-03-23 03:23:26 - delete response {"acknowledged": true}
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":90,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:26 -
+http://localhost:9200/testing_011_h20170323_032326:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:26 - POST http://localhost:9200/testing_011_h20170323_032326
+2017-03-23 03:23:26 - response: {"acknowledged":true}
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":92,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:26.388Z"}}]}},"allocations":[]}
+2017-03-23 03:23:26 -
+********************************************************************************
+** Made new index "testing_011_h20170323_032326"
+********************************************************************************
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":93,"master_node":"7s...<snip>...index":"testing_011_h20170323_032326"}]}},"allocations":[]}
+2017-03-23 03:23:26 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_011_h20170323_032326/test_result is on
+********************************************************************************
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":93,"master_node":"7s...<snip>...index":"testing_011_h20170323_032326"}]}},"allocations":[]}
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":93,"master_node":"7s...<snip>...index":"testing_011_h20170323_032326"}]}},"allocations":[]}
+2017-03-23 03:23:26 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_011_h20170323_032326/test_result is on
+********************************************************************************
+2017-03-23 03:23:26 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_011_h20170323_032326", "alias": "testing_011_h"}}]}
+2017-03-23 03:23:26 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:26 - response: {"acknowledged":true}
+2017-03-23 03:23:26 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:26 - response: {"cluster_name":"maggie_dev","version":94,"master_node":"7s...<snip>...index":"testing_011_h20170323_032326"}]}},"allocations":[]}
+2017-03-23 03:23:26 - Timer start: Add 30.0 documents to testing_011_h20170323_032326
+2017-03-23 03:23:26 -
+http://localhost:9200/testing_011_h20170323_032326/test_result/_bulk:
+        {"index":{"_id": "8B9378CCB6B61F3E2F67BCF00A94391C521F867E"}}
+        {"$value": 0}
+        {"index":{"_id": "0A6B5BF88842DEA02E9C5CFE7527D14C4206ok
+test_stats (test_agg_ops.TestAggOps) ... 5F1B"}}
+        {"$value": 1}
+        {"index":{"_id": "756808415B3EB95AC7A4C4B4A4241FBE1E0C725B"}}
+        {"$value": 2}
+        {"index":{"_id": "03640F623672169A3889C5BDF919B31588CE584C"}}
+        {"$value":
+2017-03-23 03:23:26 - POST http://localhost:9200/testing_011_h20170323_032326/test_result/_bulk
+2017-03-23 03:23:26 - response: {"took":14,"errors":false,"items":[{"index":{"_index":"testing_011_h20170323_032326","_type":"test_result","_id":"8B9378CCB6B61F3E
+2017-03-23 03:23:26 - Timer end  : Add 30.0 documents to testing_011_h20170323_032326 (took 0.035 seconds)
+2017-03-23 03:23:26 -
+http://localhost:9200/testing_011_h20170323_032326/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:26 - POST http://localhost:9200/testing_011_h20170323_032326/_flush
+2017-03-23 03:23:27 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:28 - Test result compares well
+2017-03-23 03:23:29 - Test result compares well
+2017-03-23 03:23:30 - Test result compares well
+2017-03-23 03:23:30 - Deleting index testing_011_h20170323_032326
+2017-03-23 03:23:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:30 - response: {"cluster_name":"maggie_dev","version":95,"master_node":"7s...<snip>...index":"testing_011_h20170323_032326"}]}},"allocations":[]}
+2017-03-23 03:23:30 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_011_h20170323_032326", "alias": "testing_011_h"}}]}
+2017-03-23 03:23:30 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:30 - response: {"acknowledged":true}
+2017-03-23 03:23:30 - delete response {"acknowledged": true}
+2017-03-23 03:23:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:30 - response: {"cluster_name":"maggie_dev","version":97,"master_node":"7s...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:30 -
+http://localhost:9200/testing_012_h20170323_032330:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:30 - POST http://localhost:9200/testing_012_h20170323_032330
+2017-03-23 03:23:31 - response: {"acknowledged":true}
+2017-03-23 03:23:31 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:31 - response: {"cluster_name":"maggie_dev","version":99,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:30.957Z"}}]}},"allocations":[]}
+2017-03-23 03:23:31 -
+********************************************************************************
+** Made new index "testing_012_h20170323_032330"
+********************************************************************************
+2017-03-23 03:23:31 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:31 - response: {"cluster_name":"maggie_dev","version":99,"master_node":"7s...<snip>...TED","at":"2017-03-23T03:23:30.957Z"}}]}},"allocations":[]}
+2017-03-23 03:23:31 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_012_h20170323_032330/test_result is on
+********************************************************************************
+2017-03-23 03:23:31 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:31 - response: {"cluster_name":"maggie_dev","version":101,"master_node":"7...<snip>...index":"testing_012_h20170323_032330"}]}},"allocations":[]}
+2017-03-23 03:23:31 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:31 - response: {"cluster_name":"maggie_dev","version":101,"master_node":"7...<snip>...index":"testing_012_h20170323_032330"}]}},"allocations":[]}
+2017-03-23 03:23:31 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_012_h20170323_032330/test_result is on
+********************************************************************************
+2017-03-23 03:23:31 -
+http://localhost:9200/_aliases:
+        {"ok
+test_union (test_agg_ops.TestAggOps) ... actions": [{"add": {"index": "testing_012_h20170323_032330", "alias": "testing_012_h"}}]}
+2017-03-23 03:23:31 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:31 - response: {"acknowledged":true}
+2017-03-23 03:23:31 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:31 - response: {"cluster_name":"maggie_dev","version":102,"master_node":"7...<snip>...index":"testing_012_h20170323_032330"}]}},"allocations":[]}
+2017-03-23 03:23:31 - Timer start: Add 30.0 documents to testing_012_h20170323_032330
+2017-03-23 03:23:31 -
+http://localhost:9200/testing_012_h20170323_032330/test_result/_bulk:
+        {"index":{"_id": "49C309D45DF6BBCFE16838D48B64144169E2AA34"}}
+        {"a": 0}
+        {"index":{"_id": "87BC511E06D04E8DACEB128188B48EB6C99F1ACF"}}
+        {"a": 1}
+        {"index":{"_id": "CC261B54F52EF1A02D92135DF8425AD85E63CEDF"}}
+        {"a": 4}
+        {"index":{"_id": "7ADC53CBA3C5C84499073F6655096F11E99BD8D9"}}
+        {"a": 9}
+        {"index":{"_id":
+2017-03-23 03:23:31 - POST http://localhost:9200/testing_012_h20170323_032330/test_result/_bulk
+2017-03-23 03:23:31 - response: {"took":35,"errors":false,"items":[{"index":{"_index":"testing_012_h20170323_032330","_type":"test_result","_id":"49C309D45DF6BBCF
+2017-03-23 03:23:31 - Timer end  : Add 30.0 documents to testing_012_h20170323_032330 (took 0.059 seconds)
+2017-03-23 03:23:31 -
+http://localhost:9200/testing_012_h20170323_032330/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:31 - POST http://localhost:9200/testing_012_h20170323_032330/_flush
+2017-03-23 03:23:31 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:33 - Test result compares well
+2017-03-23 03:23:34 - Test result compares well
+2017-03-23 03:23:35 - Test result compares well
+2017-03-23 03:23:35 - Deleting index testing_012_h20170323_032330
+2017-03-23 03:23:35 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:35 - response: {"cluster_name":"maggie_dev","version":103,"master_node":"7...<snip>...index":"testing_012_h20170323_032330"}]}},"allocations":[]}
+2017-03-23 03:23:35 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_012_h20170323_032330", "alias": "testing_012_h"}}]}
+2017-03-23 03:23:35 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:35 - response: {"acknowledged":true}
+2017-03-23 03:23:35 - delete response {"acknowledged": true}
+2017-03-23 03:23:35 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:35 - response: {"cluster_name":"maggie_dev","version":105,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:35 -
+http://localhost:9200/testing_013_h20170323_032335:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:35 - POST http://localhost:9200/testing_013_h20170323_032335
+2017-03-23 03:23:35 - response: {"acknowledged":true}
+2017-03-23 03:23:35 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:36 - response: {"cluster_name":"maggie_dev","version":107,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:35.900Z"}}]}},"allocations":[]}
+2017-03-23 03:23:36 -
+********************************************************************************
+** Made new index "testing_013_h20170323_032335"
+********************************************************************************
+2017-03-23 03:23:36 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:36 - response: {"cluster_name":"maggie_dev","version":108,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:35.900Z"}}]}},"allocations":[]}
+2017-03-23 03:23:36 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_013_h20170323_032335/test_result is on
+********************************************************************************
+2017-03-23 03:23:36 - GET http://localhost:9200/_clustok
+test_bad_file_request (test_basic_requests.TestBasicRequests) ... er/state
+2017-03-23 03:23:36 - response: {"cluster_name":"maggie_dev","version":109,"master_node":"7...<snip>...index":"testing_013_h20170323_032335"}]}},"allocations":[]}
+2017-03-23 03:23:36 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:36 - response: {"cluster_name":"maggie_dev","version":109,"master_node":"7...<snip>...index":"testing_013_h20170323_032335"}]}},"allocations":[]}
+2017-03-23 03:23:36 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_013_h20170323_032335/test_result is on
+********************************************************************************
+2017-03-23 03:23:36 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_013_h20170323_032335", "alias": "testing_013_h"}}]}
+2017-03-23 03:23:36 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:36 - response: {"acknowledged":true}
+2017-03-23 03:23:36 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:36 - response: {"cluster_name":"maggie_dev","version":110,"master_node":"7...<snip>...index":"testing_013_h20170323_032335"}]}},"allocations":[]}
+2017-03-23 03:23:36 - Timer start: Add 17.0 documents to testing_013_h20170323_032335
+2017-03-23 03:23:36 -
+http://localhost:9200/testing_013_h20170323_032335/test_result/_bulk:
+        {"index":{"_id": "B3DFCA7678A7430258598B752F955CCC13AA17AD"}}
+        {"b": "a"}
+        {"index":{"_id": "F1E2860E986EBDE1EC6D98C2185F9C0593CC538A"}}
+        {"b": "b"}
+        {"index":{"_id": "2F00147021624CC1F33D718E942887CE89FCD1C6"}}
+        {"b": "c"}
+        {"index":{"_id": "4FDC134A133E3AC8351C6FD287F6E6F3CBA65F34"}}
+        {"b": "d"}
+        {"index"
+2017-03-23 03:23:36 - POST http://localhost:9200/testing_013_h20170323_032335/test_result/_bulk
+2017-03-23 03:23:36 - response: {"took":10,"errors":false,"items":[{"index":{"_index":"testing_013_h20170323_032335","_type":"test_result","_id":"B3DFCA7678A74302
+2017-03-23 03:23:36 - Timer end  : Add 17.0 documents to testing_013_h20170323_032335 (took 0.027 seconds)
+2017-03-23 03:23:36 -
+http://localhost:9200/testing_013_h20170323_032335/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:36 - POST http://localhost:9200/testing_013_h20170323_032335/_flush
+2017-03-23 03:23:36 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:37 - Test result compares well
+2017-03-23 03:23:37 - Deleting index testing_013_h20170323_032335
+2017-03-23 03:23:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:37 - response: {"cluster_name":"maggie_dev","version":111,"master_node":"7...<snip>...index":"testing_013_h20170323_032335"}]}},"allocations":[]}
+2017-03-23 03:23:37 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_013_h20170323_032335", "alias": "testing_013_h"}}]}
+2017-03-23 03:23:37 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:38 - response: {"acknowledged":true}
+2017-03-23 03:23:38 - delete response {"acknowledged": true}
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":113,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":113,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+http://localhost:9200/testing_014_h20170323_032338:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:38 - POST http://localhost:9200/testing_014_h20170323_032338
+2017-03-23 03:23:38 - response: {"acknowledged":true}
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":115,"master_node":"7ok
+test_empty_request (test_basic_requests.TestBasicRequests) ... ok
+test_query_on_static_file (test_basic_requests.TestBasicRequests) ... ...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+********************************************************************************
+** Made new index "testing_014_h20170323_032338"
+********************************************************************************
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":115,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_014_h20170323_032338/test_result is on
+********************************************************************************
+2017-03-23 03:23:38 - Deleting index testing_014_h20170323_032338
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":117,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 - delete response {"acknowledged": true}
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":118,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+http://localhost:9200/testing_015_h20170323_032338:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:38 - POST http://localhost:9200/testing_015_h20170323_032338
+2017-03-23 03:23:38 - response: {"acknowledged":true}
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":120,"master_node":"7...<snip>...index":"testing_015_h20170323_032338"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+********************************************************************************
+** Made new index "testing_015_h20170323_032338"
+********************************************************************************
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:38 - response: {"cluster_name":"maggie_dev","version":120,"master_node":"7...<snip>...index":"testing_015_h20170323_032338"}]}},"allocations":[]}
+2017-03-23 03:23:38 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_015_h20170323_032338/test_result is on
+********************************************************************************
+2017-03-23 03:23:38 - Deleting index testing_015_h20170323_032338
+2017-03-23 03:23:38 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","version":121,"master_node":"7...<snip>...index":"testing_015_h20170323_032338"}]}},"allocations":[]}
+2017-03-23 03:23:39 - delete response {"acknowledged": true}
+2017-03-23 03:23:39 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","version":122,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:39 -
+http://localhost:9200/testing_016_h20170323_032339:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:39 - POST http://localhost:9200/testing_016_h20170323_032339
+2017-03-23 03:23:39 - response: {"acknowledged":true}
+2017-03-23 03:23:39 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","versionok
+test_rest_get (test_basic_requests.TestBasicRequests) ... ":123,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:39.239Z"}}]}},"allocations":[]}
+2017-03-23 03:23:39 -
+********************************************************************************
+** Made new index "testing_016_h20170323_032339"
+********************************************************************************
+2017-03-23 03:23:39 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","version":123,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:39.239Z"}}]}},"allocations":[]}
+2017-03-23 03:23:39 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_016_h20170323_032339/test_result is on
+********************************************************************************
+2017-03-23 03:23:39 - Deleting index testing_016_h20170323_032339
+2017-03-23 03:23:39 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","version":125,"master_node":"7...<snip>...index":"testing_016_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:39 - delete response {"acknowledged": true}
+2017-03-23 03:23:39 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:39 - response: {"cluster_name":"maggie_dev","version":126,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:39 -
+http://localhost:9200/testing_017_h20170323_032339:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:39 - POST http://localhost:9200/testing_017_h20170323_032339
+2017-03-23 03:23:40 - response: {"acknowledged":true}
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":128,"master_node":"7...<snip>...index":"testing_017_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:40 -
+********************************************************************************
+** Made new index "testing_017_h20170323_032339"
+********************************************************************************
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":128,"master_node":"7...<snip>...index":"testing_017_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:40 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_017_h20170323_032339/test_result is on
+********************************************************************************
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":129,"master_node":"7...<snip>...index":"testing_017_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":129,"master_node":"7...<snip>...index":"testing_017_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:40 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_017_h20170323_032339/test_result is on
+********************************************************************************
+2017-03-23 03:23:40 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_017_h20170323_032339", "alias": "testing_017_h"}}]}
+2017-03-23 03:23:40 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:40 - response: {"acknowledged":true}
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":130,"master_node":"7...<snip>...index":"testing_017_h20170323_03233ok
+test_root_request (test_basic_requests.TestBasicRequests) ... ok
+test_abs_shallow_select (test_deep_ops.TestDeepOps) ... 9"}]}},"allocations":[]}
+2017-03-23 03:23:40 - Timer start: Add 4.0 documents to testing_017_h20170323_032339
+2017-03-23 03:23:40 -
+http://localhost:9200/testing_017_h20170323_032339/test_result/_bulk:
+        {"index":{"_id": "448E7D3A620E7DD0D7C1512786977912D2AC4097"}}
+        {"a": 0, "b": 0}
+        {"index":{"_id": "3610CC324645B7942E56D5B738F1401FFF47FC96"}}
+        {"a": 0, "b": 1}
+        {"index":{"_id": "12EB8DDC4BDD40887F286BCED2FB4385EAD3C05D"}}
+        {"a": 1, "b": 0}
+        {"index":{"_id": "B35C9835368A632470CEB47B40369500DE093FB8"}}
+        {
+2017-03-23 03:23:40 - POST http://localhost:9200/testing_017_h20170323_032339/test_result/_bulk
+2017-03-23 03:23:40 - response: {"took":9,"errors":false,"items":[{"index":{"_index":"testing_017_h20170323_032339","_type":"test_result","_id":"448E7D3A620E7DD0D
+2017-03-23 03:23:40 - Timer end  : Add 4.0 documents to testing_017_h20170323_032339 (took 0.030 seconds)
+2017-03-23 03:23:40 -
+http://localhost:9200/testing_017_h20170323_032339/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:40 - POST http://localhost:9200/testing_017_h20170323_032339/_flush
+2017-03-23 03:23:40 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:40 - Deleting index testing_017_h20170323_032339
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":131,"master_node":"7...<snip>...index":"testing_017_h20170323_032339"}]}},"allocations":[]}
+2017-03-23 03:23:40 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_017_h20170323_032339", "alias": "testing_017_h"}}]}
+2017-03-23 03:23:40 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:40 - response: {"acknowledged":true}
+2017-03-23 03:23:40 - delete response {"acknowledged": true}
+2017-03-23 03:23:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:40 - response: {"cluster_name":"maggie_dev","version":133,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:40 -
+http://localhost:9200/testing_018_h20170323_032340:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:40 - POST http://localhost:9200/testing_018_h20170323_032340
+2017-03-23 03:23:41 - response: {"acknowledged":true}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":134,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:40.928Z"}}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+********************************************************************************
+** Made new index "testing_018_h20170323_032340"
+********************************************************************************
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":135,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:40.928Z"}}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_018_h20170323_032340/test_result is on
+********************************************************************************
+2017-03-23 03:23:41 - Deleting index testing_018_h20170323_032340
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":137,"master_node":"7...<snip>...index":"testing_018_h20170323_032340"}]}},"allocations":[]}
+2017-03-23 03:23:41 - delete response {"acknowledged": true}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":138,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":138,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+http://localhost:9200/testing_019_h20170323_032341:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:41 - POST http://localhost:9200/testing_019_h20170323_032341
+2017-03-23 03:23:41 - response: {"acknowledged":true}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":139,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:41.380Z"}}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+********************************************************************************
+** Made new index "testing_019_h20170323_032341"
+********************************************************************************
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":140,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:41.380Z"}}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_019_h20170323_032341/test_result is on
+********************************************************************************
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":141,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:41.380Z"}}]}},"allocations":[]}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":142,"master_node":"7...<snip>...index":"testing_019_h20170323_032341"}]}},"allocations":[]}
+2017-03-23 03:23:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_019_h20170323_032341/test_result is on
+********************************************************************************
+2017-03-23 03:23:41 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_019_h20170323_032341", "alias": "testing_019_h"}}]}
+2017-03-23 03:23:41 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:41 - response: {"acknowledged":true}
+2017-03-23 03:23:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:41 - response: {"cluster_name":"maggie_dev","version":143,"master_node":"7...<snip>...index":"testing_019_h20170323_032341"}]}},"allocations":[]}
+2017-03-23 03:23:41 - Timer start: Add 4.0 documents to testing_019_h20170323_032341
+2017-03-23 03:23:41 -
+http://localhost:9200/testing_019_h20170323_032341/test_result/_bulk:
+        {"index":{"_id": "1597F4EBA3AB80DE9D350C0FB8347D02FAE73E68"}}
+        {"o": 3, "_a": [{"b": "x", "v": 2}, {"b": "y", "v": 3}]}
+        {"index":{"_id": "173826CB18CF99835D679498A7C37098CAA5D9A1"}}
+        {"o": 1, "_a": {"b": "x", "v": 5}}
+        {"index":{"_id": "C1DA3D5E0BB5B713E064EC27BA7B3C4BE8A3C05D"}}
+        {"o": 2, "_a": [{"b":
+2017-03-23 03:23:41 - POST http://localhost:9200/testing_019_h20170323_032341/test_result/_bulk
+2017-03-23 03:23:41 - response: {"took":18,"errors":false,"items":[{"index":{"_index":"testing_019_h20170323_032341","_type":"test_result","_id":"1597F4EBA3AB80DE
+2017-03-23 03:23:41 - Timer end  : Add 4.0 documents to testing_019_h20170323_032341 (took 0.040 seconds)
+2017-03-23 03:23:41 -
+http://localhost:9200/testing_019_h20170323_032341/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:41 - POST http://localhost:9200/testing_019_h20170323_032341/_flush
+2017-03-23 03:23:41 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:43 -
+**************************ok
+test_agg_w_complicated_where (test_deep_ops.TestDeepOps) ... ******************************************************
+** Elasticsearch debugging on "testing_019_h" is on
+********************************************************************************
+2017-03-23 03:23:43 - GET http://localhost:9200/_alias/testing_019_h
+2017-03-23 03:23:43 - response: {"testing_019_h20170323_032341":{"aliases":{"testing_019_h":{}}}}
+2017-03-23 03:23:43 - GET http://localhost:9200/testing_019_h20170323_032341/_mapping
+2017-03-23 03:23:43 - response: {"testing_019_h20170323_032341":{"mappings":{"test_result":...<snip>..."string","index":"not_analyzed"},"o":{"type":"double"}}}}}}
+2017-03-23 03:23:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:43 - response: {"cluster_name":"maggie_dev","version":144,"master_node":"7...<snip>...index":"testing_019_h20170323_032341"}]}},"allocations":[]}
+2017-03-23 03:23:43 - GET http://localhost:9200/
+2017-03-23 03:23:43 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:23:43 - Timer start: upserting 5 columns
+2017-03-23 03:23:43 - todo: testing_019_h20170323_032341::c
+2017-03-23 03:23:43 - todo: testing_019_h::c
+2017-03-23 03:23:43 -
+********************************************************************************
+** metadata scan has been disabled
+********************************************************************************
+2017-03-23 03:23:43 - todo: testing_019_h20170323_032341::o
+2017-03-23 03:23:43 - todo: testing_019_h::o
+2017-03-23 03:23:43 - todo: testing_019_h20170323_032341::_a.b
+2017-03-23 03:23:43 - todo: testing_019_h::_a.b
+2017-03-23 03:23:43 - todo: testing_019_h20170323_032341::_a.v
+2017-03-23 03:23:43 - todo: testing_019_h::_a.v
+2017-03-23 03:23:43 - todo: testing_019_h20170323_032341::_a
+2017-03-23 03:23:43 - todo: testing_019_h::_a
+2017-03-23 03:23:43 - Timer end  : upserting 5 columns (took 0.047 seconds)
+2017-03-23 03:23:43 - Test result compares well
+2017-03-23 03:23:43 - Deleting index testing_019_h20170323_032341
+2017-03-23 03:23:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:43 - response: {"cluster_name":"maggie_dev","version":144,"master_node":"7...<snip>...index":"testing_019_h20170323_032341"}]}},"allocations":[]}
+2017-03-23 03:23:43 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_019_h20170323_032341", "alias": "testing_019_h"}}]}
+2017-03-23 03:23:43 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:43 - response: {"acknowledged":true}
+2017-03-23 03:23:44 - delete response {"acknowledged": true}
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":146,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:44 -
+http://localhost:9200/testing_020_h20170323_032344:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:44 - POST http://localhost:9200/testing_020_h20170323_032344
+2017-03-23 03:23:44 - response: {"acknowledged":true}
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":147,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:44.094Z"}}]}},"allocations":[]}
+2017-03-23 03:23:44 -
+********************************************************************************
+** Made new index "testing_020_h20170323_032344"
+********************************************************************************
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":148,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:44.094Z"}}]}},"allocations":[]}
+2017-03-23 03:23:44 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_020_h20170323_032344/test_result is on
+********************************************************************************
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":149,"master_node":"7...<snip>...index":"testing_020_h20170323_032344"}]}},"allocations":[]}
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":149,"master_node":"7...<snip>...index":"testing_020_h20170323_032344"}]}},"allocations":[]}
+2017-03-23 03:23:44 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_020_h20170323_032344/test_result is on
+********************************************************************************
+2017-03-23 03:23:44 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_020_h20170323_032344", "alias": "testing_020_h"}}]}
+2017-03-23 03:23:44 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:44 - response: {"acknowledged":true}
+2017-03-23 03:23:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:44 - response: {"cluster_name":"maggie_dev","version":150,"master_node":"7...<snip>...index":"testing_020_h20170323_032344"}]}},"allocations":[]}
+2017-03-23 03:23:44 - Timer start: Add 4.0 documents to testing_020_h20170323_032344
+2017-03-23 03:23:44 -
+http://localhost:9200/testing_020_h20170323_032344/test_result/_bulk:
+        {"index":{"_id": "2D86B5542F5C66EDDFE91EF15FF048105B2BDD31"}}
+        {"a": {"_a": [{"v": "a string"}, {"v": "another string"}]}, "o": 3}
+        {"index":{"_id": "6E2B98F9C9F525850F58F2E6CD128EC7174BA180"}}
+        {"a": {"_a": {"v": "still more"}}, "o": 1}
+        {"index":{"_id": "C52E00713FADB2EDB92149DB4FE5E10640343E33"}}
+        {"a
+2017-03-23 03:23:44 - POST http://localhost:9200/testing_020_h20170323_032344/test_result/_bulk
+2017-03-23 03:23:44 - response: {"took":8,"errors":false,"items":[{"index":{"_index":"testing_020_h20170323_032344","_type":"test_result","_id":"2D86B5542F5C66EDD
+2017-03-23 03:23:44 - Timer end  : Add 4.0 documents to testing_020_h20170323_032344 (took 0.026 seconds)
+2017-03-23 03:23:44 -
+http://localhost:9200/testing_020_h20170323_032344/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:44 - POST http://localhost:9200/testing_020_h20170323_032344/_flush
+2017-03-23 03:23:44 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:47 -
+********************************************************************************
+** Elasticsearch debugging on "testing_020_h" is on
+********************************************************************************
+2017-03-23 03:23:47 - GET http://localhost:9200/_alias/testing_020_h
+2017-03-23 03:23:47 - response: {"testing_020_h20170323_032344":{"aliases":{"testing_020_h":{}}}}
+2017-03-23 03:23:47 - GET http://localhost:9200/testing_020_h20170323_032344/_mapping
+2017-03-23 03:23:47 - response: {"testing_020_h20170323_032344":{"mappings":{"test_result":...<snip>...ing","index":"not_analyzed"}}}}},"o":{"type":"double"}}}}}}
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":151,"master_node":"7...<snip>...index":"testing_020_h20170323_032344"}]}},"allocations":[]}
+2017-03-23 03:23:47 - GET http://localhost:9200/
+2017-03-23 03:23:47 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:23:47 - Timer start: upserting 4 columns
+2017-03-23 03:23:47 - todo: testing_020_h20170323_032344::a._a.v
+2017-03-23 03:23:47 - todo: testing_020_h::a._a.v
+2017-03-23 03:23:47 - todo: testing_020_h20170323_032344::a._a
+2017-03-23 03:23:47 - todo: testing_020_h::a._a
+2017-03-23 03:23:47 - todo: testing_020_h20170323_032344::a
+2017-03-23 03:23:47 - todo: testing_020_h::a
+2017-03-23 03:23:47 - todo: testing_020_h201703ok
+test_aggs_on_parent (test_deep_ops.TestDeepOps) ... 23_032344::o
+2017-03-23 03:23:47 - todo: testing_020_h::o
+2017-03-23 03:23:47 - Timer end  : upserting 4 columns (took 0.024 seconds)
+2017-03-23 03:23:47 - Test result compares well
+2017-03-23 03:23:47 - Deleting index testing_020_h20170323_032344
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":151,"master_node":"7...<snip>...index":"testing_020_h20170323_032344"}]}},"allocations":[]}
+2017-03-23 03:23:47 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_020_h20170323_032344", "alias": "testing_020_h"}}]}
+2017-03-23 03:23:47 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:47 - response: {"acknowledged":true}
+2017-03-23 03:23:47 - delete response {"acknowledged": true}
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":153,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:47 -
+http://localhost:9200/testing_021_h20170323_032347:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:47 - POST http://localhost:9200/testing_021_h20170323_032347
+2017-03-23 03:23:47 - response: {"acknowledged":true}
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":155,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:47.672Z"}}]}},"allocations":[]}
+2017-03-23 03:23:47 -
+********************************************************************************
+** Made new index "testing_021_h20170323_032347"
+********************************************************************************
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":155,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:47.672Z"}}]}},"allocations":[]}
+2017-03-23 03:23:47 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_021_h20170323_032347/test_result is on
+********************************************************************************
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":155,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:47.672Z"}}]}},"allocations":[]}
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":155,"master_node":"7...<snip>...TED","at":"2017-03-23T03:23:47.672Z"}}]}},"allocations":[]}
+2017-03-23 03:23:47 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_021_h20170323_032347/test_result is on
+********************************************************************************
+2017-03-23 03:23:47 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_021_h20170323_032347", "alias": "testing_021_h"}}]}
+2017-03-23 03:23:47 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:47 - response: {"acknowledged":true}
+2017-03-23 03:23:47 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:47 - response: {"cluster_name":"maggie_dev","version":157,"master_node":"7...<snip>...index":"testing_021_h20170323_032347"}]}},"allocations":[]}
+2017-03-23 03:23:47 - Timer start: Add 4.0 documents to testing_021_h20170323_032347
+2017-03-23 03:23:47 -
+http://localhost:9200/testing_021_h20170323_032347/test_result/_bulk:
+        {"index":{"_id": "46176CA0FD60D12681E8BC1EE4F4A7E8E0F65517"}}
+        {"a": {"_a": [{"s": false, "v": "a string"}, {"v": "another string"}]}, "o": 3}
+        {"index":{"_id": "78CB0AB126C550C12B32C8F03BE7ok
+test_aggs_on_parent_and_child (test_deep_ops.TestDeepOps) ... 34A2C526F8FB"}}
+        {"a": {"_a": {"s": false, "v": "still more"}}, "o": 1}
+        {"index":{"_id": "A7A10933FEBBCA8E1A596FA
+2017-03-23 03:23:47 - POST http://localhost:9200/testing_021_h20170323_032347/test_result/_bulk
+2017-03-23 03:23:47 - response: {"took":12,"errors":false,"items":[{"index":{"_index":"testing_021_h20170323_032347","_type":"test_result","_id":"46176CA0FD60D126
+2017-03-23 03:23:47 - Timer end  : Add 4.0 documents to testing_021_h20170323_032347 (took 0.034 seconds)
+2017-03-23 03:23:47 -
+http://localhost:9200/testing_021_h20170323_032347/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:48 - POST http://localhost:9200/testing_021_h20170323_032347/_flush
+2017-03-23 03:23:48 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:49 - Test result compares well
+2017-03-23 03:23:51 - Test result compares well
+2017-03-23 03:23:52 -
+********************************************************************************
+** Elasticsearch debugging on "testing_021_h" is on
+********************************************************************************
+2017-03-23 03:23:52 - GET http://localhost:9200/_alias/testing_021_h
+2017-03-23 03:23:52 - response: {"testing_021_h20170323_032347":{"aliases":{"testing_021_h":{}}}}
+2017-03-23 03:23:52 - GET http://localhost:9200/testing_021_h20170323_032347/_mapping
+2017-03-23 03:23:52 - response: {"testing_021_h20170323_032347":{"mappings":{"test_result":...<snip>...ing","index":"not_analyzed"}}}}},"o":{"type":"double"}}}}}}
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":158,"master_node":"7...<snip>...index":"testing_021_h20170323_032347"}]}},"allocations":[]}
+2017-03-23 03:23:52 - GET http://localhost:9200/
+2017-03-23 03:23:52 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:23:52 - Timer start: upserting 5 columns
+2017-03-23 03:23:52 - todo: testing_021_h20170323_032347::a._a.s
+2017-03-23 03:23:52 - todo: testing_021_h::a._a.s
+2017-03-23 03:23:52 - todo: testing_021_h20170323_032347::a._a.v
+2017-03-23 03:23:52 - todo: testing_021_h::a._a.v
+2017-03-23 03:23:52 - todo: testing_021_h20170323_032347::a._a
+2017-03-23 03:23:52 - todo: testing_021_h::a._a
+2017-03-23 03:23:52 - todo: testing_021_h20170323_032347::a
+2017-03-23 03:23:52 - todo: testing_021_h::a
+2017-03-23 03:23:52 - todo: testing_021_h20170323_032347::o
+2017-03-23 03:23:52 - todo: testing_021_h::o
+2017-03-23 03:23:52 - Timer end  : upserting 5 columns (took 0.038 seconds)
+2017-03-23 03:23:52 - Test result compares well
+2017-03-23 03:23:52 - Deleting index testing_021_h20170323_032347
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":158,"master_node":"7...<snip>...index":"testing_021_h20170323_032347"}]}},"allocations":[]}
+2017-03-23 03:23:52 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_021_h20170323_032347", "alias": "testing_021_h"}}]}
+2017-03-23 03:23:52 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:52 - response: {"acknowledged":true}
+2017-03-23 03:23:52 - delete response {"acknowledged": true}
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":160,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 -
+http://localhost:9200/testing_022_h20170323_032352:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:52 - POST http://localhost:9200/testing_022_h20170323_032352
+2017-03-23 03:23:52 - response: {"acknowledged":true}
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":162,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 -
+********************************************************************************
+** Made new index "testing_022_h20170323_032352"
+********************************************************************************
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":163,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_022_h20170323_032352/test_result is on
+********************************************************************************
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":163,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":163,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_022_h20170323_032352/test_result is on
+********************************************************************************
+2017-03-23 03:23:52 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_022_h20170323_032352", "alias": "testing_022_h"}}]}
+2017-03-23 03:23:52 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:52 - response: {"acknowledged":true}
+2017-03-23 03:23:52 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:52 - response: {"cluster_name":"maggie_dev","version":164,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:52 - Timer start: Add 4.0 documents to testing_022_h20170323_032352
+2017-03-23 03:23:52 -
+http://localhost:9200/testing_022_h20170323_032352/test_result/_bulk:
+        {"index":{"_id": "4CD432287BC292310DE3B4BAACC38A9258C04A62"}}
+        {"a": {"_a": [{"s": false, "v": "b"}, {"v": "c"}]}, "o": 1}
+        {"index":{"_id": "78DD2D91693E6B8E5C0A586DE0932A38989BBA90"}}
+        {"a": {"_a": {"s": false, "v": "b"}}, "o": 1}
+        {"index":{"_id": "9A3726B7F7C2234FEA4DCD1D1B133C0B4539B809"}}
+        {"a": {"
+2017-03-23 03:23:52 - POST http://localhost:9200/testing_022_h20170323_032352/test_result/_bulk
+2017-03-23 03:23:52 - response: {"took":9,"errors":false,"items":[{"index":{"_index":"testing_022_h20170323_032352","_type":"test_result","_id":"4CD432287BC292310
+2017-03-23 03:23:52 - Timer end  : Add 4.0 documents to testing_022_h20170323_032352 (took 0.037 seconds)
+2017-03-23 03:23:52 -
+http://localhost:9200/testing_022_h20170323_032352/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:52 - POST http://localhost:9200/testing_022_h20170323_032352/_flush
+2017-03-23 03:23:53 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:54 - Test result compares well
+2017-03-23 03:23:56 - Test result compares well
+2017-03-23 03:23:57 -
+********************************************************************************
+** Elasticsearch debugging on "testing_022_h" is on
+********************************************************************************
+2017-03-23 03:23:57 - GET http://localhost:9200/_alias/testing_022_h
+2017-03-23 03:23:57 - response: {"testing_022_h20170323_032352":{"aliases":{"testing_022_h":{}}}}
+2017-03-23 03:23:57 - GET http://localhost:9200/testing_022_h20170323_032352/_mapping
+2017-03-23 03:23:57 - response: {"testing_022_h20170323_032352":{"mappings":{"test_result":...<snip>...ing","index":"not_analyzed"}}}}},"o":{"type":"double"}}}}}}
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+20ok
+test_bad_deep_select_column_w_groupby (test_deep_ops.TestDeepOps) ... 17-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":165,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 - GET http://localhost:9200/
+2017-03-23 03:23:57 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:23:57 - Timer start: upserting 5 columns
+2017-03-23 03:23:57 - todo: testing_022_h20170323_032352::a._a.s
+2017-03-23 03:23:57 - todo: testing_022_h::a._a.s
+2017-03-23 03:23:57 - todo: testing_022_h20170323_032352::a._a.v
+2017-03-23 03:23:57 - todo: testing_022_h::a._a.v
+2017-03-23 03:23:57 - todo: testing_022_h20170323_032352::a._a
+2017-03-23 03:23:57 - todo: testing_022_h::a._a
+2017-03-23 03:23:57 - todo: testing_022_h20170323_032352::a
+2017-03-23 03:23:57 - todo: testing_022_h::a
+2017-03-23 03:23:57 - todo: testing_022_h20170323_032352::o
+2017-03-23 03:23:57 - todo: testing_022_h::o
+2017-03-23 03:23:57 - Timer end  : upserting 5 columns (took 0.029 seconds)
+2017-03-23 03:23:57 - Test result compares well
+2017-03-23 03:23:57 - Deleting index testing_022_h20170323_032352
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":165,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_022_h20170323_032352", "alias": "testing_022_h"}}]}
+2017-03-23 03:23:57 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:57 - response: {"acknowledged":true}
+2017-03-23 03:23:57 - delete response {"acknowledged": true}
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":167,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 -
+http://localhost:9200/testing_023_h20170323_032357:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:57 - POST http://localhost:9200/testing_023_h20170323_032357
+2017-03-23 03:23:57 - response: {"acknowledged":true}
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":169,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 -
+********************************************************************************
+** Made new index "testing_023_h20170323_032357"
+********************************************************************************
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":170,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_023_h20170323_032357/test_result is on
+********************************************************************************
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":170,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":170,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_023_h20170323_032357/test_result is on
+***************ok
+test_deep_agg_on_expression (test_deep_ops.TestDeepOps) ... *****************************************************************
+2017-03-23 03:23:57 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_023_h20170323_032357", "alias": "testing_023_h"}}]}
+2017-03-23 03:23:57 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:57 - response: {"acknowledged":true}
+2017-03-23 03:23:57 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:57 - response: {"cluster_name":"maggie_dev","version":171,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:57 - Timer start: Add 1.0 documents to testing_023_h20170323_032357
+2017-03-23 03:23:57 -
+http://localhost:9200/testing_023_h20170323_032357/test_result/_bulk:
+        {"index":{"_id": "600AF593948CFD3EBDF85FBF695BC1E9A3C920A1"}}
+        {"_a": {"b": "x"}}
+
+2017-03-23 03:23:57 - POST http://localhost:9200/testing_023_h20170323_032357/test_result/_bulk
+2017-03-23 03:23:57 - response: {"took":6,"errors":false,"items":[{"index":{"_index":"testing_023_h20170323_032357","_type":"test_result","_id":"600AF593948CFD3EB
+2017-03-23 03:23:57 - Timer end  : Add 1.0 documents to testing_023_h20170323_032357 (took 0.018 seconds)
+2017-03-23 03:23:57 -
+http://localhost:9200/testing_023_h20170323_032357/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:23:57 - POST http://localhost:9200/testing_023_h20170323_032357/_flush
+2017-03-23 03:23:58 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:23:59 - Deleting index testing_023_h20170323_032357
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":172,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_023_h20170323_032357", "alias": "testing_023_h"}}]}
+2017-03-23 03:23:59 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:59 - response: {"acknowledged":true}
+2017-03-23 03:23:59 - delete response {"acknowledged": true}
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":174,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 -
+http://localhost:9200/testing_024_h20170323_032359:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:23:59 - POST http://localhost:9200/testing_024_h20170323_032359
+2017-03-23 03:23:59 - response: {"acknowledged":true}
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":175,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 -
+********************************************************************************
+** Made new index "testing_024_h20170323_032359"
+********************************************************************************
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":176,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_024_h20170323_032359/test_result is on
+********************************************************************************
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":177,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03ok
+test_deep_agg_on_expression_w_shallow_where (test_deep_ops.TestDeepOps) ... :23:59 - response: {"cluster_name":"maggie_dev","version":177,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_024_h20170323_032359/test_result is on
+********************************************************************************
+2017-03-23 03:23:59 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_024_h20170323_032359", "alias": "testing_024_h"}}]}
+2017-03-23 03:23:59 - POST http://localhost:9200/_aliases
+2017-03-23 03:23:59 - response: {"acknowledged":true}
+2017-03-23 03:23:59 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:23:59 - response: {"cluster_name":"maggie_dev","version":178,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:23:59 - Timer start: Add 4.0 documents to testing_024_h20170323_032359
+2017-03-23 03:23:59 -
+http://localhost:9200/testing_024_h20170323_032359/test_result/_bulk:
+        {"index":{"_id": "921A28E6CA2C7BDE2D7C10B8BDA9D9FC073A5F27"}}
+        {"a": {"_a": [{"v": "a string"}, {"v": "another string"}]}, "o": 3}
+        {"index":{"_id": "5E5D7EE3F6261C0A1D7FA44B375649B696D33112"}}
+        {"a": {"_a": {"v": "still more"}}, "o": 1}
+        {"index":{"_id": "E32C12DBD8FB7B4D027F9CCE7E0AE8DCCD7FF3E8"}}
+        {"a
+2017-03-23 03:23:59 - POST http://localhost:9200/testing_024_h20170323_032359/test_result/_bulk
+2017-03-23 03:23:59 - response: {"took":8,"errors":false,"items":[{"index":{"_index":"testing_024_h20170323_032359","_type":"test_result","_id":"921A28E6CA2C7BDE2
+2017-03-23 03:23:59 - Timer end  : Add 4.0 documents to testing_024_h20170323_032359 (took 0.028 seconds)
+2017-03-23 03:24:00 -
+http://localhost:9200/testing_024_h20170323_032359/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:00 - POST http://localhost:9200/testing_024_h20170323_032359/_flush
+2017-03-23 03:24:00 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:01 - Test result compares well
+2017-03-23 03:24:03 - Test result compares well
+2017-03-23 03:24:04 - Test result compares well
+2017-03-23 03:24:04 - Deleting index testing_024_h20170323_032359
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":179,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:04 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_024_h20170323_032359", "alias": "testing_024_h"}}]}
+2017-03-23 03:24:04 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:04 - response: {"acknowledged":true}
+2017-03-23 03:24:04 - delete response {"acknowledged": true}
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":181,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:04 -
+http://localhost:9200/testing_025_h20170323_032404:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:04 - POST http://localhost:9200/testing_025_h20170323_032404
+2017-03-23 03:24:04 - response: {"acknowledged":true}
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":183,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:04 -
+********************************************************************************
+** Made new index "testing_025_h20170323_032404"
+********************************************************************************
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:ok
+test_deep_agg_w_deeper_select_relative_name (test_deep_ops.TestDeepOps) ... 24:04 - response: {"cluster_name":"maggie_dev","version":183,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:04 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_025_h20170323_032404/test_result is on
+********************************************************************************
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":183,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":183,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:04 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_025_h20170323_032404/test_result is on
+********************************************************************************
+2017-03-23 03:24:04 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_025_h20170323_032404", "alias": "testing_025_h"}}]}
+2017-03-23 03:24:04 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:04 - response: {"acknowledged":true}
+2017-03-23 03:24:04 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:04 - response: {"cluster_name":"maggie_dev","version":184,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:04 - Timer start: Add 4.0 documents to testing_025_h20170323_032404
+2017-03-23 03:24:04 -
+http://localhost:9200/testing_025_h20170323_032404/test_result/_bulk:
+        {"index":{"_id": "414D0615DEF583C312B28156AF1AF7D45D05AC99"}}
+        {"a": {"_a": [{"v": "a string"}, {"v": "another string"}]}, "o": 3}
+        {"index":{"_id": "D397745A0E47F5A61734BA7C6B17DE1CF5E32F51"}}
+        {"a": {"_a": {"v": "still more"}}, "o": 1}
+        {"index":{"_id": "653953EBC18FEBFFEE91DB5DA554DB927C5355F9"}}
+        {"a
+2017-03-23 03:24:04 - POST http://localhost:9200/testing_025_h20170323_032404/test_result/_bulk
+2017-03-23 03:24:04 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_025_h20170323_032404","_type":"test_result","_id":"414D0615DEF583C31
+2017-03-23 03:24:04 - Timer end  : Add 4.0 documents to testing_025_h20170323_032404 (took 0.024 seconds)
+2017-03-23 03:24:04 -
+http://localhost:9200/testing_025_h20170323_032404/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:04 - POST http://localhost:9200/testing_025_h20170323_032404/_flush
+2017-03-23 03:24:05 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:06 - Test result compares well
+2017-03-23 03:24:06 - Deleting index testing_025_h20170323_032404
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":185,"master_node":"7...<snip>...index":"testing_025_h20170323_032404"}]}},"allocations":[]}
+2017-03-23 03:24:06 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_025_h20170323_032404", "alias": "testing_025_h"}}]}
+2017-03-23 03:24:06 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:06 - response: {"acknowledged":true}
+2017-03-23 03:24:06 - delete response {"acknowledged": true}
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":187,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 -
+http://localhost:9200/testing_026_h20170323_032406:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:06 - POST http://localhost:9200/testing_026_h20170323_032406
+2017-03-23 03:24:06 - response: {"acknowledged":true}
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":189,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 -
+********************************************************************************
+** Made new index "testing_026_h20170323_032406"
+********************************************************************************
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":190,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_026_h20170323_032406/test_result is on
+********************************************************************************
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":190,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":190,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_026_h20170323_032406/test_result is on
+********************************************************************************
+2017-03-23 03:24:06 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_026_h20170323_032406", "alias": "testing_026_h"}}]}
+2017-03-23 03:24:06 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:06 - response: {"acknowledged":true}
+2017-03-23 03:24:06 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:06 - response: {"cluster_name":"maggie_dev","version":191,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:06 - Timer start: Add 1.0 documents to testing_026_h20170323_032406
+2017-03-23 03:24:06 -
+http://localhost:9200/testing_026_h20170323_032406/test_result/_bulk:
+        {"index":{"_id": "B142F3DD3DFD17D975DEC0E5D47ACA2468F38101"}}
+        {"a": {"_b": [{"r": {"s": "a"}, "v": {"u": 1}}, {"r": {"s": "a"}, "v": {"u": 2}}, {"r": {"s": "b"}, "v": {"u": 3}}, {"r": {"s": "b"}, "v": {"u": 4}}, {"r": {"s": "c"}, "v": {"u": 5}}, {"v": {"u": 6}}]}}
+
+2017-03-23 03:24:06 - POST http://localhost:9200/testing_026_h20170323_032406/test_result/_bulk
+2017-03-23 03:24:06 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_026_h20170323_032406","_type":"test_result","_id":"B142F3DD3DFD17D97
+2017-03-23 03:24:06 - Timer end  : Add 1.0 documents to testing_026_h20170323_032406 (took 0.028 seconds)
+2017-03-23 03:24:06 -
+http://localhost:9200/testing_026_h20170323_032406/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:06 - POST http://localhost:9200/testing_026_h20170323_032406/_flush
+2017-03-23 03:24:07 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:08 - Test result compares well
+2017-03-23 03:24:09 - Test result compares well
+2017-03-23 03:24:11 -
+********************************************************************************
+** Elasticsearch debugging on "testing_026_h" is on
+********************************************************************************
+2017-03-23 03:24:11 - GET http://localhost:9200/_alias/testing_026_h
+2017-03-23 03:24:11 - response: {"testing_026_h20170323_032406":{"aliases":{"testing_026_h":{}}}}
+2017-03-23 03:24:11 - GET http://localhost:9200/testing_026_h20170323_032406/_mapping
+2017-03-23 03:24:11 - response: {"testing_026_h20170323_032406":{"mappings":{"test_result":...<snip>...amic":ok
+test_deep_edge_using_list (test_deep_ops.TestDeepOps) ... "true","properties":{"u":{"type":"double"}}}}}}}}}}}}
+2017-03-23 03:24:11 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:11 - response: {"cluster_name":"maggie_dev","version":192,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:11 - GET http://localhost:9200/
+2017-03-23 03:24:11 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:11 - Timer start: upserting 6 columns
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a._b.r.s
+2017-03-23 03:24:11 - todo: testing_026_h::a._b.r.s
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a._b.r
+2017-03-23 03:24:11 - todo: testing_026_h::a._b.r
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a._b.v.u
+2017-03-23 03:24:11 - todo: testing_026_h::a._b.v.u
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a._b.v
+2017-03-23 03:24:11 - todo: testing_026_h::a._b.v
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a._b
+2017-03-23 03:24:11 - todo: testing_026_h::a._b
+2017-03-23 03:24:11 - todo: testing_026_h20170323_032406::a
+2017-03-23 03:24:11 - todo: testing_026_h::a
+2017-03-23 03:24:11 - Timer end  : upserting 6 columns (took 0.050 seconds)
+2017-03-23 03:24:11 - Test result compares well
+2017-03-23 03:24:11 - Deleting index testing_026_h20170323_032406
+2017-03-23 03:24:11 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:11 - response: {"cluster_name":"maggie_dev","version":192,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:11 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_026_h20170323_032406", "alias": "testing_026_h"}}]}
+2017-03-23 03:24:11 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:11 - response: {"acknowledged":true}
+2017-03-23 03:24:11 - delete response {"acknowledged": true}
+2017-03-23 03:24:11 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:11 - response: {"cluster_name":"maggie_dev","version":194,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:11 -
+http://localhost:9200/testing_027_h20170323_032411:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:11 - POST http://localhost:9200/testing_027_h20170323_032411
+2017-03-23 03:24:11 - response: {"acknowledged":true}
+2017-03-23 03:24:11 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:11 - response: {"cluster_name":"maggie_dev","version":196,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:11 -
+********************************************************************************
+** Made new index "testing_027_h20170323_032411"
+********************************************************************************
+2017-03-23 03:24:11 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:11 - response: {"cluster_name":"maggie_dev","version":196,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:11 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_027_h20170323_032411/test_result is on
+********************************************************************************
+2017-03-23 03:24:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:12 - response: {"cluster_name":"maggie_dev","version":197,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:12 - response: {"cluster_name":"maggie_dev","version":197,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:12 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_027_h20170323_032411/test_result is on
+********************************************************************************
+2017-03-23 03:24:12 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_027_h20170323_032411", "alias": "testing_027_h"}}]}
+2017-03-23 03:24:12 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:12 - response: {"acknowledged":true}
+2017-03-23 03:24:12 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:12 - response: {"cluster_name":"maggie_dev","version":198,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:12 - Timer start: Add 1.0 documents to testing_027_h20170323_032411
+2017-03-23 03:24:12 -
+http://localhost:9200/testing_027_h20170323_032411/test_result/_bulk:
+        {"index":{"_id": "9444A2FB604432F8DD2FBA1CB031108F24C8DF47"}}
+        {"a": {"_b": [{"s": "aa", "r": "a"}, {"s": "bb"}, {"s": "bb", "r": "bb"}, {"s": "cc", "r": "c"}, {"s": "dd"}, {"s": "ee", "r": "e"}, {"s": "ee", "r": "e"}, {"r": "f"}, {"r": "f"}, {"k": 1}]}}
+
+2017-03-23 03:24:12 - POST http://localhost:9200/testing_027_h20170323_032411/test_result/_bulk
+2017-03-23 03:24:12 - response: {"took":8,"errors":false,"items":[{"index":{"_index":"testing_027_h20170323_032411","_type":"test_result","_id":"9444A2FB604432F8D
+2017-03-23 03:24:12 - Timer end  : Add 1.0 documents to testing_027_h20170323_032411 (took 0.028 seconds)
+2017-03-23 03:24:12 -
+http://localhost:9200/testing_027_h20170323_032411/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:12 - POST http://localhost:9200/testing_027_h20170323_032411/_flush
+2017-03-23 03:24:12 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:13 - Test result compares well
+2017-03-23 03:24:15 - Test result compares well
+2017-03-23 03:24:16 -
+********************************************************************************
+** Elasticsearch debugging on "testing_027_h" is on
+********************************************************************************
+2017-03-23 03:24:16 - GET http://localhost:9200/_alias/testing_027_h
+2017-03-23 03:24:16 - response: {"testing_027_h20170323_032411":{"aliases":{"testing_027_h":{}}}}
+2017-03-23 03:24:16 - GET http://localhost:9200/testing_027_h20170323_032411/_mapping
+2017-03-23 03:24:16 - response: {"testing_027_h20170323_032411":{"mappings":{"test_result":...<snip>...zed"},"s":{"type":"string","index":"not_analyzed"}}}}}}}}}}
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":199,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:16 - GET http://localhost:9200/
+2017-03-23 03:24:16 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:16 - Timer start: upserting 5 columns
+2017-03-23 03:24:16 - todo: testing_027_h20170323_032411::a._b.s
+2017-03-23 03:24:16 - todo: testing_027_h::a._b.s
+2017-03-23 03:24:16 - todo: testing_027_h20170323_032411::a._b.r
+2017-03-23 03:24:16 - todo: testing_027_h::a._b.r
+2017-03-23 03:24:16 - todo: testing_027_h20170323_032411::a._b.k
+2017-03-23 03:24:16 - todo: testing_027_h::a._b.k
+2017-03-23 03:24:16 - todo: testing_027_h20170323_032411::a._b
+2017-03-23 03:24:16 - todo: testing_027_h::a._b
+2017-03-23 03:24:16 - todo: testing_027_h20170323_032411::a
+2017-03-23 03:24:16 - todo: testing_027_h::a
+2017-03-23 03:24:16 - Timer end  : upserting 5 columns (took 0.030 seconds)
+2017-03-23 03:24:16 - Test result compares well
+2017-03-23 03:24:16 - Deleting index testing_027_h20170323_032411
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":199,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}ok
+test_deep_names (test_deep_ops.TestDeepOps) ... },"allocations":[]}
+2017-03-23 03:24:16 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_027_h20170323_032411", "alias": "testing_027_h"}}]}
+2017-03-23 03:24:16 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:16 - response: {"acknowledged":true}
+2017-03-23 03:24:16 - delete response {"acknowledged": true}
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":201,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:16 -
+http://localhost:9200/testing_028_h20170323_032416:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:16 - POST http://localhost:9200/testing_028_h20170323_032416
+2017-03-23 03:24:16 - response: {"acknowledged":true}
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":203,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:16.850Z"}}]}},"allocations":[]}
+2017-03-23 03:24:16 -
+********************************************************************************
+** Made new index "testing_028_h20170323_032416"
+********************************************************************************
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":204,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:16.850Z"}}]}},"allocations":[]}
+2017-03-23 03:24:16 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_028_h20170323_032416/test_result is on
+********************************************************************************
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:16 - response: {"cluster_name":"maggie_dev","version":205,"master_node":"7...<snip>...index":"testing_028_h20170323_032416"}]}},"allocations":[]}
+2017-03-23 03:24:16 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:17 - response: {"cluster_name":"maggie_dev","version":205,"master_node":"7...<snip>...index":"testing_028_h20170323_032416"}]}},"allocations":[]}
+2017-03-23 03:24:17 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_028_h20170323_032416/test_result is on
+********************************************************************************
+2017-03-23 03:24:17 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_028_h20170323_032416", "alias": "testing_028_h"}}]}
+2017-03-23 03:24:17 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:17 - response: {"acknowledged":true}
+2017-03-23 03:24:17 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:17 - response: {"cluster_name":"maggie_dev","version":206,"master_node":"7...<snip>...index":"testing_028_h20170323_032416"}]}},"allocations":[]}
+2017-03-23 03:24:17 - Timer start: Add 1.0 documents to testing_028_h20170323_032416
+2017-03-23 03:24:17 -
+http://localhost:9200/testing_028_h20170323_032416/test_result/_bulk:
+        {"index":{"_id": "744645CEAC2D4ADC77F8D54F6F639CCA2B10B6F2"}}
+        {"a": {"_t": [{"h": {"s": "a-a"}, "b": {"s": 1}}, {"h": {"s": "a-b"}, "b": {"s": 2}}, {"h": {"s": "a-c"}, "b": {"s": 3}}, {"h": {"s": "b-d"}, "b": {"s": 4}}, {"h": {"s": "b-e"}, "b": {"s": 5}}, {"h": {"s": "b-f"}, "b": {"s": 6}}]}}
+
+2017-03-23 03:24:17 - POST http://localhost:9200/testing_028_h20170323_032416/test_result/_bulk
+2017-03-23 03:24:17 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_028_h20170323_032416","_type":"test_result","_id":"744645CEAC2D4ADC7
+2017-03-23 03:24:17 - Timer end  : Add 1.0 documents to testing_028_h20170323_032416 (toook
+test_deep_names_select_value (test_deep_ops.TestDeepOps) ... k 0.022 seconds)
+2017-03-23 03:24:17 -
+http://localhost:9200/testing_028_h20170323_032416/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:17 - POST http://localhost:9200/testing_028_h20170323_032416/_flush
+2017-03-23 03:24:17 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:19 -
+********************************************************************************
+** Elasticsearch debugging on "testing_028_h" is on
+********************************************************************************
+2017-03-23 03:24:19 - GET http://localhost:9200/_alias/testing_028_h
+2017-03-23 03:24:19 - response: {"testing_028_h20170323_032416":{"aliases":{"testing_028_h":{}}}}
+2017-03-23 03:24:19 - GET http://localhost:9200/testing_028_h20170323_032416/_mapping
+2017-03-23 03:24:19 - response: {"testing_028_h20170323_032416":{"mappings":{"test_result":...<snip>...s":{"s":{"type":"string","index":"not_analyzed"}}}}}}}}}}}}
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":207,"master_node":"7...<snip>...index":"testing_028_h20170323_032416"}]}},"allocations":[]}
+2017-03-23 03:24:19 - GET http://localhost:9200/
+2017-03-23 03:24:19 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:19 - Timer start: upserting 6 columns
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a._t.h.s
+2017-03-23 03:24:19 - todo: testing_028_h::a._t.h.s
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a._t.h
+2017-03-23 03:24:19 - todo: testing_028_h::a._t.h
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a._t.b.s
+2017-03-23 03:24:19 - todo: testing_028_h::a._t.b.s
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a._t.b
+2017-03-23 03:24:19 - todo: testing_028_h::a._t.b
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a._t
+2017-03-23 03:24:19 - todo: testing_028_h::a._t
+2017-03-23 03:24:19 - todo: testing_028_h20170323_032416::a
+2017-03-23 03:24:19 - todo: testing_028_h::a
+2017-03-23 03:24:19 - Timer end  : upserting 6 columns (took 0.190 seconds)
+2017-03-23 03:24:19 - Test result compares well
+2017-03-23 03:24:19 - Deleting index testing_028_h20170323_032416
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":207,"master_node":"7...<snip>...index":"testing_028_h20170323_032416"}]}},"allocations":[]}
+2017-03-23 03:24:19 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_028_h20170323_032416", "alias": "testing_028_h"}}]}
+2017-03-23 03:24:19 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:19 - response: {"acknowledged":true}
+2017-03-23 03:24:19 - delete response {"acknowledged": true}
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":209,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:19 -
+http://localhost:9200/testing_029_h20170323_032419:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:19 - POST http://localhost:9200/testing_029_h20170323_032419
+2017-03-23 03:24:19 - response: {"acknowledged":true}
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":211,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:19.799Z"}}]}},"allocations":[]}
+2017-03-23 03:24:19 -
+********************************************************************************
+** Made new index "testing_029_h20170323_032419"
+********************************************************************************
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":212,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:19.799Z"}}]}},"allocations":[]}
+2017-03-23 03:24:19 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_029_h20170323_032419/test_result is on
+********************************************************************************
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":213,"master_node":"7...<snip>...index":"testing_029_h20170323_032419"}]}},"allocations":[]}
+2017-03-23 03:24:19 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:19 - response: {"cluster_name":"maggie_dev","version":213,"master_node":"7...<snip>...index":"testing_029_h20170323_032419"}]}},"allocations":[]}
+2017-03-23 03:24:19 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_029_h20170323_032419/test_result is on
+********************************************************************************
+2017-03-23 03:24:19 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_029_h20170323_032419", "alias": "testing_029_h"}}]}
+2017-03-23 03:24:19 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:20 - response: {"acknowledged":true}
+2017-03-23 03:24:20 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:20 - response: {"cluster_name":"maggie_dev","version":214,"master_node":"7...<snip>...index":"testing_029_h20170323_032419"}]}},"allocations":[]}
+2017-03-23 03:24:20 - Timer start: Add 1.0 documents to testing_029_h20170323_032419
+2017-03-23 03:24:20 -
+http://localhost:9200/testing_029_h20170323_032419/test_result/_bulk:
+        {"index":{"_id": "99874EE53091C324F6B7E7CCA6D32B636216A8CF"}}
+        {"a": {"_t": [{"h": {"s": "a-a"}, "b": {"s": 1}}, {"h": {"s": "a-b"}, "b": {"s": 2}}, {"h": {"s": "a-c"}, "b": {"s": 3}}, {"h": {"s": "b-d"}, "b": {"s": 4}}, {"h": {"s": "b-e"}, "b": {"s": 5}}, {"h": {"s": "b-f"}, "b": {"s": 6}}]}}
+
+2017-03-23 03:24:20 - POST http://localhost:9200/testing_029_h20170323_032419/test_result/_bulk
+2017-03-23 03:24:20 - response: {"took":6,"errors":false,"items":[{"index":{"_index":"testing_029_h20170323_032419","_type":"test_result","_id":"99874EE53091C324F
+2017-03-23 03:24:20 - Timer end  : Add 1.0 documents to testing_029_h20170323_032419 (took 0.021 seconds)
+2017-03-23 03:24:20 -
+http://localhost:9200/testing_029_h20170323_032419/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:20 - POST http://localhost:9200/testing_029_h20170323_032419/_flush
+2017-03-23 03:24:20 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:21 - Test result compares well
+2017-03-23 03:24:23 - Test result compares well
+2017-03-23 03:24:24 -
+********************************************************************************
+** Elasticsearch debugging on "testing_029_h" is on
+********************************************************************************
+2017-03-23 03:24:24 - GET http://localhost:9200/_alias/testing_029_h
+2017-03-23 03:24:24 - response: {"testing_029_h20170323_032419":{"aliases":{"testing_029_h":{}}}}
+2017-03-23 03:24:24 - GET http://localhost:9200/testing_029_h20170323_032419/_mapping
+2017-03-23 03:24:24 - response: {"testing_029_h20170323_032419":{"mappings":{"test_result":...<snip>...s":{"s":{"type":"string","index":"not_analyzed"}}}}}}}}}}}}
+2017-03-23 03:24:24 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:24 - response: {"cluster_name":"maggie_dev","version":215,"master_node":"7...<snip>...index":"testing_029_h20170323_032419"}]}},"allocations":[]}
+2017-03-23 03:24:24 - GET http://localhost:9200/
+2017-03-23 03:24:24 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:24 - Timer start: upserting 6 columns
+2017-03-ok
+test_deep_names_w_star (test_deep_ops.TestDeepOps) ... 23 03:24:24 - todo: testing_029_h20170323_032419::a._t.h.s
+2017-03-23 03:24:24 - todo: testing_029_h::a._t.h.s
+2017-03-23 03:24:24 - todo: testing_029_h20170323_032419::a._t.h
+2017-03-23 03:24:24 - todo: testing_029_h::a._t.h
+2017-03-23 03:24:24 - todo: testing_029_h20170323_032419::a._t.b.s
+2017-03-23 03:24:24 - todo: testing_029_h::a._t.b.s
+2017-03-23 03:24:24 - todo: testing_029_h20170323_032419::a._t.b
+2017-03-23 03:24:24 - todo: testing_029_h::a._t.b
+2017-03-23 03:24:24 - todo: testing_029_h20170323_032419::a._t
+2017-03-23 03:24:24 - todo: testing_029_h::a._t
+2017-03-23 03:24:24 - todo: testing_029_h20170323_032419::a
+2017-03-23 03:24:24 - todo: testing_029_h::a
+2017-03-23 03:24:24 - Timer end  : upserting 6 columns (took 0.049 seconds)
+2017-03-23 03:24:24 - Test result compares well
+2017-03-23 03:24:24 - Deleting index testing_029_h20170323_032419
+2017-03-23 03:24:24 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:24 - response: {"cluster_name":"maggie_dev","version":215,"master_node":"7...<snip>...index":"testing_029_h20170323_032419"}]}},"allocations":[]}
+2017-03-23 03:24:24 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_029_h20170323_032419", "alias": "testing_029_h"}}]}
+2017-03-23 03:24:24 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:24 - response: {"acknowledged":true}
+2017-03-23 03:24:24 - delete response {"acknowledged": true}
+2017-03-23 03:24:24 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:24 - response: {"cluster_name":"maggie_dev","version":217,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:24 -
+http://localhost:9200/testing_030_h20170323_032424:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:24 - POST http://localhost:9200/testing_030_h20170323_032424
+2017-03-23 03:24:25 - response: {"acknowledged":true}
+2017-03-23 03:24:25 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:25 - response: {"cluster_name":"maggie_dev","version":219,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:25 -
+********************************************************************************
+** Made new index "testing_030_h20170323_032424"
+********************************************************************************
+2017-03-23 03:24:25 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:25 - response: {"cluster_name":"maggie_dev","version":219,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:25 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_030_h20170323_032424/test_result is on
+********************************************************************************
+2017-03-23 03:24:25 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:25 - response: {"cluster_name":"maggie_dev","version":220,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:25 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:25 - response: {"cluster_name":"maggie_dev","version":220,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:25 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_030_h20170323_032424/test_result is on
+********************************************************************************
+2017-03-23 03:24:25 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_030_h20170323_032424", "alias": "testing_030_h"}}]}
+2017-03-23 03:24:25 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:25 - response:ok
+test_deep_or (test_deep_ops.TestDeepOps) ...  {"acknowledged":true}
+2017-03-23 03:24:25 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:25 - response: {"cluster_name":"maggie_dev","version":222,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:25 - Timer start: Add 1.0 documents to testing_030_h20170323_032424
+2017-03-23 03:24:25 -
+http://localhost:9200/testing_030_h20170323_032424/test_result/_bulk:
+        {"index":{"_id": "89EEF424CB3B6B985C2DEE08C84ECD29C5C95DEB"}}
+        {"a": {"_t": [{"h": {"s": "a-a"}, "b": {"s": 1}}, {"h": {"s": "a-b"}, "b": {"s": 2}}, {"h": {"s": "a-c"}, "b": {"s": 3}}, {"h": {"s": "b-d"}, "b": {"s": 4}}, {"h": {"s": "b-e"}, "b": {"s": 5}}, {"h": {"s": "b-f"}, "b": {"s": 6}}]}}
+
+2017-03-23 03:24:25 - POST http://localhost:9200/testing_030_h20170323_032424/test_result/_bulk
+2017-03-23 03:24:25 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_030_h20170323_032424","_type":"test_result","_id":"89EEF424CB3B6B985
+2017-03-23 03:24:25 - Timer end  : Add 1.0 documents to testing_030_h20170323_032424 (took 0.026 seconds)
+2017-03-23 03:24:25 -
+http://localhost:9200/testing_030_h20170323_032424/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:25 - POST http://localhost:9200/testing_030_h20170323_032424/_flush
+2017-03-23 03:24:25 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:27 - Test result compares well
+2017-03-23 03:24:28 - Test result compares well
+2017-03-23 03:24:29 -
+********************************************************************************
+** Elasticsearch debugging on "testing_030_h" is on
+********************************************************************************
+2017-03-23 03:24:29 - GET http://localhost:9200/_alias/testing_030_h
+2017-03-23 03:24:29 - response: {"testing_030_h20170323_032424":{"aliases":{"testing_030_h":{}}}}
+2017-03-23 03:24:29 - GET http://localhost:9200/testing_030_h20170323_032424/_mapping
+2017-03-23 03:24:29 - response: {"testing_030_h20170323_032424":{"mappings":{"test_result":...<snip>...s":{"s":{"type":"string","index":"not_analyzed"}}}}}}}}}}}}
+2017-03-23 03:24:29 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:29 - response: {"cluster_name":"maggie_dev","version":223,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:29 - GET http://localhost:9200/
+2017-03-23 03:24:29 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:29 - Timer start: upserting 6 columns
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a._t.h.s
+2017-03-23 03:24:29 - todo: testing_030_h::a._t.h.s
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a._t.h
+2017-03-23 03:24:29 - todo: testing_030_h::a._t.h
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a._t.b.s
+2017-03-23 03:24:29 - todo: testing_030_h::a._t.b.s
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a._t.b
+2017-03-23 03:24:29 - todo: testing_030_h::a._t.b
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a._t
+2017-03-23 03:24:29 - todo: testing_030_h::a._t
+2017-03-23 03:24:29 - todo: testing_030_h20170323_032424::a
+2017-03-23 03:24:29 - todo: testing_030_h::a
+2017-03-23 03:24:29 - Timer end  : upserting 6 columns (took 0.034 seconds)
+2017-03-23 03:24:29 - Test result compares well
+2017-03-23 03:24:29 - Deleting index testing_030_h20170323_032424
+2017-03-23 03:24:29 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:29 - response: {"cluster_name":"maggie_dev","version":223,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:29 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_030_h20170323_032424", "alias": "testing_030_h"}}]}
+2017-03-23 03:24:29 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:29 - response: {"acknowledged":true}
+2017-03-23 03:24:30 - delete response {"acknowledged": true}
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":225,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 -
+http://localhost:9200/testing_031_h20170323_032430:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:30 - POST http://localhost:9200/testing_031_h20170323_032430
+2017-03-23 03:24:30 - response: {"acknowledged":true}
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":226,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 -
+********************************************************************************
+** Made new index "testing_031_h20170323_032430"
+********************************************************************************
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":226,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_031_h20170323_032430/test_result is on
+********************************************************************************
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":228,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":228,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_031_h20170323_032430/test_result is on
+********************************************************************************
+2017-03-23 03:24:30 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_031_h20170323_032430", "alias": "testing_031_h"}}]}
+2017-03-23 03:24:30 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:30 - response: {"acknowledged":true}
+2017-03-23 03:24:30 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:30 - response: {"cluster_name":"maggie_dev","version":229,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:30 - Timer start: Add 1.0 documents to testing_031_h20170323_032430
+2017-03-23 03:24:30 -
+http://localhost:9200/testing_031_h20170323_032430/test_result/_bulk:
+        {"index":{"_id": "3B5387F467B4902F329178D12D92A4DFBE91D585"}}
+        {"a": {"_b": [{"q": {"a": 0, "b": 0}}, {"q": {"a": 0, "b": 1}}, {"q": {"a": 0}}, {"q": {"a": 1, "b": 0}}, {"q": {"a": 1, "b": 1}}, {"q": {"a": 1}}, {"q": {"b": 0}}, {"q": {"b": 1}}, {"q": {}}]}}
+
+2017-03-23 03:24:30 - POST http://localhost:9200/testing_031_h20170323_032430/test_result/_bulk
+2017-03-23 03:24:30 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_031_h20170323_032430","_type":"test_result","_id":"3B5387F467B4902F3
+2017-03-23 03:24:30 - Timer end  : Add 1.0 documents to testing_031_h20170323_032430 (took 0.026 seconds)
+2017-03-23 03:24:30 -
+http://localhost:9200/testing_031_h20170323_032430/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:30 - POST http://localhost:9200/testing_031_h20170323_032430/_flush
+2017-03-23 03:24:30 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:32 -
+********************************************************************************
+** Elasticsearcok
+test_deep_select_column (test_deep_ops.TestDeepOps) ... h debugging on "testing_031_h" is on
+********************************************************************************
+2017-03-23 03:24:32 - GET http://localhost:9200/_alias/testing_031_h
+2017-03-23 03:24:32 - response: {"testing_031_h20170323_032430":{"aliases":{"testing_031_h":{}}}}
+2017-03-23 03:24:32 - GET http://localhost:9200/testing_031_h20170323_032430/_mapping
+2017-03-23 03:24:32 - response: {"testing_031_h20170323_032430":{"mappings":{"test_result":...<snip>...es":{"a":{"type":"double"},"b":{"type":"double"}}}}}}}}}}}}
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":230,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:32 - GET http://localhost:9200/
+2017-03-23 03:24:32 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:32 - Timer start: upserting 5 columns
+2017-03-23 03:24:32 - todo: testing_031_h20170323_032430::a._b.q.a
+2017-03-23 03:24:32 - todo: testing_031_h::a._b.q.a
+2017-03-23 03:24:32 - todo: testing_031_h20170323_032430::a._b.q.b
+2017-03-23 03:24:32 - todo: testing_031_h::a._b.q.b
+2017-03-23 03:24:32 - todo: testing_031_h20170323_032430::a._b.q
+2017-03-23 03:24:32 - todo: testing_031_h::a._b.q
+2017-03-23 03:24:32 - todo: testing_031_h20170323_032430::a._b
+2017-03-23 03:24:32 - todo: testing_031_h::a._b
+2017-03-23 03:24:32 - todo: testing_031_h20170323_032430::a
+2017-03-23 03:24:32 - todo: testing_031_h::a
+2017-03-23 03:24:32 - Timer end  : upserting 5 columns (took 0.032 seconds)
+2017-03-23 03:24:32 - Test result compares well
+2017-03-23 03:24:32 - Deleting index testing_031_h20170323_032430
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":230,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:32 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_031_h20170323_032430", "alias": "testing_031_h"}}]}
+2017-03-23 03:24:32 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:32 - response: {"acknowledged":true}
+2017-03-23 03:24:32 - delete response {"acknowledged": true}
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":232,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:32 -
+http://localhost:9200/testing_032_h20170323_032432:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:32 - POST http://localhost:9200/testing_032_h20170323_032432
+2017-03-23 03:24:32 - response: {"acknowledged":true}
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":233,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:32.423Z"}}]}},"allocations":[]}
+2017-03-23 03:24:32 -
+********************************************************************************
+** Made new index "testing_032_h20170323_032432"
+********************************************************************************
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":233,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:32.423Z"}}]}},"allocations":[]}
+2017-03-23 03:24:32 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_032_h20170323_032432/test_result is on
+********************************************************************************
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":234,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:32.423Z"}}]}},"allocations":[]}
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":234,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:32.423Z"}}]}},"allocations":[]}
+2017-03-23 03:24:32 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_032_h20170323_032432/test_result is on
+********************************************************************************
+2017-03-23 03:24:32 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_032_h20170323_032432", "alias": "testing_032_h"}}]}
+2017-03-23 03:24:32 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:32 - response: {"acknowledged":true}
+2017-03-23 03:24:32 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:32 - response: {"cluster_name":"maggie_dev","version":237,"master_node":"7...<snip>...index":"testing_032_h20170323_032432"}]}},"allocations":[]}
+2017-03-23 03:24:32 - Timer start: Add 4.0 documents to testing_032_h20170323_032432
+2017-03-23 03:24:32 -
+http://localhost:9200/testing_032_h20170323_032432/test_result/_bulk:
+        {"index":{"_id": "06A892B042F45CDA473ECF344B0164860EF6F55D"}}
+        {"_a": [{"b": "x", "v": 2}, {"b": "y", "v": 3}]}
+        {"index":{"_id": "F8110D71C58B9C62865D8F1819BCDA58BE345317"}}
+        {"_a": {"b": "x", "v": 5}}
+        {"index":{"_id": "CE5FEE1833DCC51C00CCCD10023D2FD7C8DCC0AA"}}
+        {"_a": [{"b": "x", "v": 7}]}
+        {"index":
+2017-03-23 03:24:32 - POST http://localhost:9200/testing_032_h20170323_032432/test_result/_bulk
+2017-03-23 03:24:32 - response: {"took":8,"errors":false,"items":[{"index":{"_index":"testing_032_h20170323_032432","_type":"test_result","_id":"06A892B042F45CDA4
+2017-03-23 03:24:32 - Timer end  : Add 4.0 documents to testing_032_h20170323_032432 (took 0.021 seconds)
+2017-03-23 03:24:32 -
+http://localhost:9200/testing_032_h20170323_032432/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:32 - POST http://localhost:9200/testing_032_h20170323_032432/_flush
+2017-03-23 03:24:32 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:34 - Test result compares well
+2017-03-23 03:24:35 - Test result compares well
+2017-03-23 03:24:36 -
+********************************************************************************
+** Elasticsearch debugging on "testing_032_h" is on
+********************************************************************************
+2017-03-23 03:24:36 - GET http://localhost:9200/_alias/testing_032_h
+2017-03-23 03:24:36 - response: {"testing_032_h20170323_032432":{"aliases":{"testing_032_h":{}}}}
+2017-03-23 03:24:36 - GET http://localhost:9200/testing_032_h20170323_032432/_mapping
+2017-03-23 03:24:36 - response: {"testing_032_h20170323_032432":{"mappings":{"test_result":...<snip>...ouble"}}},"c":{"type":"string","index":"not_analyzed"}}}}}}
+2017-03-23 03:24:36 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":238,"master_node":"7...<snip>...index":"testing_032_h20170323_032432"}]}},"allocations":[]}
+2017-03-23 03:24:37 - GET http://localhost:9200/
+2017-03-23 03:24:37 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:37 - Timer start: upserting 4 columns
+2017-03-23 03:24:37 - todo: testing_032_h20170323_032432::c
+2017-03-23 03:24:37 - todo: testing_032_h::c
+2017-03-23 03:24:37 - todo: testing_032_h20170323_032432::_a.b
+2017-03-23 03:24:37 - todo: testing_032_h::_a.b
+2017-03-23 03:24:37 - todo: testing_032_h20170323_032432::_a.v
+2017-03-23 03:24:37 - todo: testing_032_h::_a.v
+2017-03-23 03:24:37 - todo: testing_032_h20170323_032432::_a
+2017-03-23 03:24:37 - todo: testing_032_h::_a
+2017-03-23 03:24:37 - Timer end  : upserting 4 columns (took 0.027 seconds)
+2017-03-23 03:24:37 - Test resuok
+test_deep_select_column_w_groupby (test_deep_ops.TestDeepOps) ... lt compares well
+2017-03-23 03:24:37 - Deleting index testing_032_h20170323_032432
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":238,"master_node":"7...<snip>...index":"testing_032_h20170323_032432"}]}},"allocations":[]}
+2017-03-23 03:24:37 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_032_h20170323_032432", "alias": "testing_032_h"}}]}
+2017-03-23 03:24:37 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:37 - response: {"acknowledged":true}
+2017-03-23 03:24:37 - delete response {"acknowledged": true}
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":240,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:37 -
+http://localhost:9200/testing_033_h20170323_032437:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:37 - POST http://localhost:9200/testing_033_h20170323_032437
+2017-03-23 03:24:37 - response: {"acknowledged":true}
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":242,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:37 -
+********************************************************************************
+** Made new index "testing_033_h20170323_032437"
+********************************************************************************
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":243,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:37 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_033_h20170323_032437/test_result is on
+********************************************************************************
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":244,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":244,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:37 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_033_h20170323_032437/test_result is on
+********************************************************************************
+2017-03-23 03:24:37 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_033_h20170323_032437", "alias": "testing_033_h"}}]}
+2017-03-23 03:24:37 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:37 - response: {"acknowledged":true}
+2017-03-23 03:24:37 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:37 - response: {"cluster_name":"maggie_dev","version":245,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:37 - Timer start: Add 4.0 documents to testing_033_h20170323_032437
+2017-03-23 03:24:37 -
+http://localhost:9200/testing_033_h20170323_032437/test_result/_bulk:
+        {"index":{"_id": "BE2DEBE31A8F1111325A9FE1D772D2FBFA82BA53"}}
+        {"_a": [{"b": "x", "v": 2}, {"b": "y", "v": 3}]}
+        {"index":{"_id": "3604EE3D16DECCDF4380DE9A08F9948B22B31949"}}
+        {"_a": {"b": "x", "v": 5}}
+        {"index":{"_id": "5CBFBD8328F1AE33A5287CE38E4062BB1FD6D0DF"}}
+        {"_a": [{"b": "x", "v": 7}]}
+        {"index":
+2017-03-23 03:24:37 - POST http://localhost:9200ok
+test_deep_star (test_deep_ops.TestDeepOps) ... /testing_033_h20170323_032437/test_result/_bulk
+2017-03-23 03:24:37 - response: {"took":7,"errors":false,"items":[{"index":{"_index":"testing_033_h20170323_032437","_type":"test_result","_id":"BE2DEBE31A8F11113
+2017-03-23 03:24:37 - Timer end  : Add 4.0 documents to testing_033_h20170323_032437 (took 0.024 seconds)
+2017-03-23 03:24:37 -
+http://localhost:9200/testing_033_h20170323_032437/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:37 - POST http://localhost:9200/testing_033_h20170323_032437/_flush
+2017-03-23 03:24:37 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:39 - Test result compares well
+2017-03-23 03:24:40 -
+********************************************************************************
+** Elasticsearch debugging on "testing_033_h" is on
+********************************************************************************
+2017-03-23 03:24:40 - GET http://localhost:9200/_alias/testing_033_h
+2017-03-23 03:24:40 - response: {"testing_033_h20170323_032437":{"aliases":{"testing_033_h":{}}}}
+2017-03-23 03:24:40 - GET http://localhost:9200/testing_033_h20170323_032437/_mapping
+2017-03-23 03:24:40 - response: {"testing_033_h20170323_032437":{"mappings":{"test_result":...<snip>...ouble"}}},"c":{"type":"string","index":"not_analyzed"}}}}}}
+2017-03-23 03:24:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:40 - response: {"cluster_name":"maggie_dev","version":246,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:40 - GET http://localhost:9200/
+2017-03-23 03:24:40 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:40 - Timer start: upserting 4 columns
+2017-03-23 03:24:40 - todo: testing_033_h20170323_032437::c
+2017-03-23 03:24:40 - todo: testing_033_h::c
+2017-03-23 03:24:40 - todo: testing_033_h20170323_032437::_a.b
+2017-03-23 03:24:40 - todo: testing_033_h::_a.b
+2017-03-23 03:24:40 - todo: testing_033_h20170323_032437::_a.v
+2017-03-23 03:24:40 - todo: testing_033_h::_a.v
+2017-03-23 03:24:40 - todo: testing_033_h20170323_032437::_a
+2017-03-23 03:24:40 - todo: testing_033_h::_a
+2017-03-23 03:24:40 - Timer end  : upserting 4 columns (took 0.027 seconds)
+2017-03-23 03:24:40 - Test result compares well
+2017-03-23 03:24:40 - Deleting index testing_033_h20170323_032437
+2017-03-23 03:24:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:40 - response: {"cluster_name":"maggie_dev","version":246,"master_node":"7...<snip>...index":"testing_033_h20170323_032437"}]}},"allocations":[]}
+2017-03-23 03:24:40 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_033_h20170323_032437", "alias": "testing_033_h"}}]}
+2017-03-23 03:24:40 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:40 - response: {"acknowledged":true}
+2017-03-23 03:24:40 - delete response {"acknowledged": true}
+2017-03-23 03:24:40 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:40 - response: {"cluster_name":"maggie_dev","version":248,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:40 -
+http://localhost:9200/testing_034_h20170323_032440:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:40 - POST http://localhost:9200/testing_034_h20170323_032440
+2017-03-23 03:24:41 - response: {"acknowledged":true}
+2017-03-23 03:24:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:41 - response: {"cluster_name":"maggie_dev","version":250,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:41 -
+********************************************************************************
+** Made new index "testing_034_h20170323_032440"
+********************************************************************************
+2017-03-23 03:24:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:41 - response: {"cluster_name":"maggie_dev","version":250,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_034_h20170323_032440/test_result is on
+********************************************************************************
+2017-03-23 03:24:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:41 - response: {"cluster_name":"maggie_dev","version":251,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:41 - response: {"cluster_name":"maggie_dev","version":252,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:41 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_034_h20170323_032440/test_result is on
+********************************************************************************
+2017-03-23 03:24:41 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_034_h20170323_032440", "alias": "testing_034_h"}}]}
+2017-03-23 03:24:41 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:41 - response: {"acknowledged":true}
+2017-03-23 03:24:41 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:41 - response: {"cluster_name":"maggie_dev","version":253,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:41 - Timer start: Add 1.0 documents to testing_034_h20170323_032440
+2017-03-23 03:24:41 -
+http://localhost:9200/testing_034_h20170323_032440/test_result/_bulk:
+        {"index":{"_id": "B83A736F324436EEA1BD5BCFCE41962A6C071B30"}}
+        {"a": {"_b": [{"q": {"a": 0, "b": 1}}, {"q": {"a": 0}}, {"q": {}}]}, "x": 1}
+
+2017-03-23 03:24:41 - POST http://localhost:9200/testing_034_h20170323_032440/test_result/_bulk
+2017-03-23 03:24:41 - response: {"took":13,"errors":false,"items":[{"index":{"_index":"testing_034_h20170323_032440","_type":"test_result","_id":"B83A736F324436EE
+2017-03-23 03:24:41 - Timer end  : Add 1.0 documents to testing_034_h20170323_032440 (took 0.029 seconds)
+2017-03-23 03:24:41 -
+http://localhost:9200/testing_034_h20170323_032440/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:41 - POST http://localhost:9200/testing_034_h20170323_032440/_flush
+2017-03-23 03:24:41 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:43 -
+********************************************************************************
+** Elasticsearch debugging on "testing_034_h" is on
+********************************************************************************
+2017-03-23 03:24:43 - GET http://localhost:9200/_alias/testing_034_h
+2017-03-23 03:24:43 - response: {"testing_034_h20170323_032440":{"aliases":{"testing_034_h":{}}}}
+2017-03-23 03:24:43 - GET http://localhost:9200/testing_034_h20170323_032440/_mapping
+2017-03-23 03:24:43 - response: {"testing_034_h20170323_032440":{"mappings":{"test_result":...<snip>...le"},"b":{"type":"double"}}}}}}},"x":{"type":"double"}}}}}}
+2017-03-23 03:24:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:43 - response: {"cluster_name":"maggie_dev","version":254,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:43 - GET http://localhost:9200/
+2017-03-23 03:24:43 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:43 - Timer start: upserting 6 columns
+2017-03-23 03:24:43 - todo: testing_034_h20170323_032440::a._b.q.a
+2017-03-23 03:24:43 - todo: testing_034_h::a._b.q.a
+2017-03-23 03:24:43 - todo: testing_034_h2ok
+test_exists (test_deep_ops.TestDeepOps) ... 0170323_032440::a._b.q.b
+2017-03-23 03:24:43 - todo: testing_034_h::a._b.q.b
+2017-03-23 03:24:43 - todo: testing_034_h20170323_032440::a._b.q
+2017-03-23 03:24:43 - todo: testing_034_h::a._b.q
+2017-03-23 03:24:43 - todo: testing_034_h20170323_032440::a._b
+2017-03-23 03:24:43 - todo: testing_034_h::a._b
+2017-03-23 03:24:43 - todo: testing_034_h20170323_032440::a
+2017-03-23 03:24:43 - todo: testing_034_h::a
+2017-03-23 03:24:43 - todo: testing_034_h20170323_032440::x
+2017-03-23 03:24:43 - todo: testing_034_h::x
+2017-03-23 03:24:43 - Timer end  : upserting 6 columns (took 0.065 seconds)
+2017-03-23 03:24:43 - Test result compares well
+2017-03-23 03:24:43 - Deleting index testing_034_h20170323_032440
+2017-03-23 03:24:43 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:43 - response: {"cluster_name":"maggie_dev","version":254,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:43 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_034_h20170323_032440", "alias": "testing_034_h"}}]}
+2017-03-23 03:24:43 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:43 - response: {"acknowledged":true}
+2017-03-23 03:24:44 - delete response {"acknowledged": true}
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":256,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:44 -
+http://localhost:9200/testing_035_h20170323_032444:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:44 - POST http://localhost:9200/testing_035_h20170323_032444
+2017-03-23 03:24:44 - response: {"acknowledged":true}
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":258,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:44.052Z"}}]}},"allocations":[]}
+2017-03-23 03:24:44 -
+********************************************************************************
+** Made new index "testing_035_h20170323_032444"
+********************************************************************************
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":258,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:44.052Z"}}]}},"allocations":[]}
+2017-03-23 03:24:44 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_035_h20170323_032444/test_result is on
+********************************************************************************
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":258,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:44.052Z"}}]}},"allocations":[]}
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":258,"master_node":"7...<snip>...TED","at":"2017-03-23T03:24:44.052Z"}}]}},"allocations":[]}
+2017-03-23 03:24:44 -
+********************************************************************************
+** elasticsearch debugging for http://localhost:9200/testing_035_h20170323_032444/test_result is on
+********************************************************************************
+2017-03-23 03:24:44 -
+http://localhost:9200/_aliases:
+        {"actions": [{"add": {"index": "testing_035_h20170323_032444", "alias": "testing_035_h"}}]}
+2017-03-23 03:24:44 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:44 - response: {"acknowledged":true}
+2017-03-23 03:24:44 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:44 - response: {"cluster_name":"maggie_dev","version":261,"mok
+test_from_shallow_select_deep_column (test_deep_ops.TestDeepOps) ... aster_node":"7...<snip>...index":"testing_035_h20170323_032444"}]}},"allocations":[]}
+2017-03-23 03:24:44 - Timer start: Add 1.0 documents to testing_035_h20170323_032444
+2017-03-23 03:24:44 -
+http://localhost:9200/testing_035_h20170323_032444/test_result/_bulk:
+        {"index":{"_id": "D7070630352CA6E990A5B28D944362BF9A77E0D5"}}
+        {"a": {"_b": [{"a": 0, "b": 0}, {"a": 0, "b": 1}, {"a": 0}, {"a": 1, "b": 0}, {"a": 1, "b": 1}, {"a": 1}, {"b": 0}, {"b": 1}, {}]}}
+
+2017-03-23 03:24:44 - POST http://localhost:9200/testing_035_h20170323_032444/test_result/_bulk
+2017-03-23 03:24:44 - response: {"took":6,"errors":false,"items":[{"index":{"_index":"testing_035_h20170323_032444","_type":"test_result","_id":"D7070630352CA6E99
+2017-03-23 03:24:44 - Timer end  : Add 1.0 documents to testing_035_h20170323_032444 (took 0.020 seconds)
+2017-03-23 03:24:44 -
+http://localhost:9200/testing_035_h20170323_032444/_flush:
+        {"forced": false, "wait_if_ongoing": true}
+2017-03-23 03:24:44 - POST http://localhost:9200/testing_035_h20170323_032444/_flush
+2017-03-23 03:24:44 - response: {"_shards":{"total":3,"successful":3,"failed":0}}
+2017-03-23 03:24:46 -
+********************************************************************************
+** Elasticsearch debugging on "testing_035_h" is on
+********************************************************************************
+2017-03-23 03:24:46 - GET http://localhost:9200/_alias/testing_035_h
+2017-03-23 03:24:46 - response: {"testing_035_h20170323_032444":{"aliases":{"testing_035_h":{}}}}
+2017-03-23 03:24:46 - GET http://localhost:9200/testing_035_h20170323_032444/_mapping
+2017-03-23 03:24:46 - response: {"testing_035_h20170323_032444":{"mappings":{"test_result":...<snip>...ties":{"a":{"type":"double"},"b":{"type":"double"}}}}}}}}}}
+2017-03-23 03:24:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:46 - response: {"cluster_name":"maggie_dev","version":262,"master_node":"7...<snip>...index":"testing_035_h20170323_032444"}]}},"allocations":[]}
+2017-03-23 03:24:46 - GET http://localhost:9200/
+2017-03-23 03:24:46 - response: {
+  "status" : 200,
+  "name" : "Dredmund Druid",
+  "clus...<snip>... : "4.10.4"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+2017-03-23 03:24:46 - Timer start: upserting 4 columns
+2017-03-23 03:24:46 - todo: testing_035_h20170323_032444::a._b.a
+2017-03-23 03:24:46 - todo: testing_035_h::a._b.a
+2017-03-23 03:24:46 - todo: testing_035_h20170323_032444::a._b.b
+2017-03-23 03:24:46 - todo: testing_035_h::a._b.b
+2017-03-23 03:24:46 - todo: testing_035_h20170323_032444::a._b
+2017-03-23 03:24:46 - todo: testing_035_h::a._b
+2017-03-23 03:24:46 - todo: testing_035_h20170323_032444::a
+2017-03-23 03:24:46 - todo: testing_035_h::a
+2017-03-23 03:24:46 - Timer end  : upserting 4 columns (took 0.024 seconds)
+2017-03-23 03:24:46 - Test result compares well
+2017-03-23 03:24:46 - Deleting index testing_035_h20170323_032444
+2017-03-23 03:24:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:46 - response: {"cluster_name":"maggie_dev","version":262,"master_node":"7...<snip>...index":"testing_035_h20170323_032444"}]}},"allocations":[]}
+2017-03-23 03:24:46 -
+http://localhost:9200/_aliases:
+        {"actions": [{"remove": {"index": "testing_035_h20170323_032444", "alias": "testing_035_h"}}]}
+2017-03-23 03:24:46 - POST http://localhost:9200/_aliases
+2017-03-23 03:24:46 - response: {"acknowledged":true}
+2017-03-23 03:24:46 - delete response {"acknowledged": true}
+2017-03-23 03:24:46 - GET http://localhost:9200/_cluster/state
+2017-03-23 03:24:46 - response: {"cluster_name":"maggie_dev","version":264,"master_node":"7...<snip>..."active_data_requests20170322_163231"}]}},"allocations":[]}
+2017-03-23 03:24:46 -
+http://localhost:9200/testing_036_h20170323_032446:
+        {"mappings": {"test_result": {"dynamic_templates": [{"default_numbers": {"match_mapping_type": "long", "mapping": {"type": "double"}, "match": "*"}}, {"default_strings": {"match_mapping_type": "string", "mapping": {"index": "not_analyzed", "type": "string"}, "match": "*"}}, {"default_nested_objects"
+2017-03-23 03:24:46 - POST http://localhost:9200/testing_036_h20170323_032446
