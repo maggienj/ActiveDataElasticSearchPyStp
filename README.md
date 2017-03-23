@@ -24,6 +24,8 @@ Step-3: <br>
 (a) Ensure ElasticSearch service is running <br> 
 Goto c:/ElasticSearch171 <br> 
 Or open the ElasticSearch Terminal and then run "net start elasticsearch" <br> 
+<img src=elasticsearch_service_start.PNG> <br>
+
 (b) Run these steps to access the ActiveData Query Tool <br> 
 Open GitBash <br> 
 cd c:/ActiveData <br> 
