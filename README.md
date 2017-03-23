@@ -30,6 +30,7 @@ cd c:/ActiveData <br>
 export PYTHONPATH=. <br> 
 alias python27=c:/python27/python.exe <br> 
 python27 active_data/app.py --settings=resources/config/simple_settings.json <br> 
+<img src=ActiveData_start_gitbash2.PNG> <br>
 
 Step-4: <br> 
 (a) Open http://localhost:5000 <br> 
