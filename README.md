@@ -61,3 +61,8 @@ https://github.com/rgl/elasticsearch-setup/releases/tag/v5.2.2 <br>
 <br>
 full link to the exe <br>
 https://github.com/rgl/elasticsearch-setup/releases/download/v5.2.2/elasticsearch-5.2.2-jre-8u121-setup-64-bit.exe<br>
+<br>
+
+Downloaded the above link.... but didn't execute it bcos I thought , I would directly download the latest version from elastic.co itself. <br>
+So, here is the direct link https://www.elastic.co/downloads/elasticsearch <br>
+V5.2.2 is the latest as of the time of this writing. <br>
