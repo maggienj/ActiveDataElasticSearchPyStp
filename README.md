@@ -48,3 +48,16 @@ Unit Test Results: <br>
 <img src=unittests_1.PNG> <br> <br>
 <a href="unit_test_results.txt"> Unit Test Results are here in this link </a>
 
+
+<br>
+<br>
+
+As the next step, we will try to stop the Elastic Search 1.7.1 service and then install Version 5.x and check how it executes for unit testing. <br>
+Here is how we stop the elastic search 1.7.1 service. <br>
+<img src = ElasticSearch171StopService.PNG> <br> <br>
+
+And then , downloaded this exe to check how it runs ... <br>
+https://github.com/rgl/elasticsearch-setup/releases/tag/v5.2.2 <br>
+<br>
+full link to the exe <br>
+https://github.com/rgl/elasticsearch-setup/releases/download/v5.2.2/elasticsearch-5.2.2-jre-8u121-setup-64-bit.exe<br>
