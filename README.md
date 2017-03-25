@@ -69,7 +69,7 @@ V5.2.2 is the latest as of the time of this writing. <br>
 
 <br>
 Elastic Search 5.2.2 has been installed in a separate directory and then bin/elasticsearch.bat was exectd.  It appears that the elastic service is up and running for version 5.2.2 <br>
-elasticsearch_service_start_522.PNG <br>
+elasticsearch_servicestart_522.PNG <br>
 <img src=elasticsearch_service_start_522.PNG> 
 <br>
 Next step.... Run the same unit tests again using ES 5.2.2 service.... <br> 
