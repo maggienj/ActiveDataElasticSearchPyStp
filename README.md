@@ -71,5 +71,5 @@ V5.2.2 is the latest as of the time of this writing. <br>
 Elastic Search 5.2.2 has been installed in a separate directory and then bin/elasticsearch.bat was exectd.  It appears that the elastic service is up and running for version 5.2.2 <br>
 elasticsearch_servicestart_522.PNG <br>
 <img src=elasticsearch_servicestart_522.PNG> 
-<br>
+<br> (Please ignore the highlight of the localhost:port in the above image... it is just the teansportation service that runs in 9300 port which is not of importance.  The following line kicks the HttpServer service in port 9200 and that is what of interest to us.  So , please ignore the highlights in the image ) <br>
 Next step.... Run the same unit tests again using ES 5.2.2 service.... <br> 
