@@ -1,0 +1,19 @@
+For Journal Entry:
+These are the commands for starting ElasticSearch 522 and ElasticSearch - head in my Mac.
+Storing this here... as a reference.
+
+ES -local-cmds-for-mac:
+
+For running es522:
+MSelvans-MBP:elasticsearch-5.2.2 mselvan$ ./bin/elasticsearch
+
+
+For running es-head:
+MSelvans-MBP:elasticsearch-head mselvan$ npm start 
+
+> elasticsearch-head@0.0.0 start /Users/mselvan/elasticsearch-head
+> grunt server
+
+Running "connect:server" (connect) task
+Waiting forever...
+Started connect web server on http://localhost:9100
