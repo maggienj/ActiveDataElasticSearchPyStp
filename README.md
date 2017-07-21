@@ -59,13 +59,14 @@ Here is how we stop the elastic search 1.7.1 service. <br>
 And then , downloaded this exe to check how it runs ... <br>
 https://github.com/rgl/elasticsearch-setup/releases/tag/v5.2.2 <br>
 <br>
-full link to the exe <br>
-https://github.com/rgl/elasticsearch-setup/releases/download/v5.2.2/elasticsearch-5.2.2-jre-8u121-setup-64-bit.exe<br>
+<strike>full link to the exe <br>
+https://github.com/rgl/elasticsearch-setup/releases/download/v5.2.2/elasticsearch-5.2.2-jre-8u121-setup-64-bit.exe   </strike><br>
 <br>
 
 Downloaded the above link.... but didn't execute it bcos I thought , I would directly download the latest version from elastic.co itself. <br>
-So, here is the direct link https://www.elastic.co/downloads/elasticsearch <br>
-V5.2.2 is the latest as of the time of this writing. <br>
+So, here is the direct link for <br>
+V5.2.2 https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2 is the latest as of the time of this writing. <br>
+Other latest releases could be found at https://www.elastic.co/downloads/elasticsearch
 
 <br>
 Elastic Search 5.2.2 has been installed in a separate directory and then bin/elasticsearch.bat was exectd.  It appears that the elastic service is up and running for version 5.2.2 <br>
