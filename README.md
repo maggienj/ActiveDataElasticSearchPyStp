@@ -73,3 +73,12 @@ elasticsearch_servicestart_522.PNG <br>
 <img src=elasticsearch_servicestart_522.PNG> 
 <br> (Please ignore the highlight of the localhost:port in the above image... it is just the transportation service that runs in 9300 port which is not of importance.  The following line kicks the HttpServer service in port 9200 and that is what of interest to us.  So , please ignore the highlights in the image ) <br>
 Next step.... Run the same unit tests again using ES 5.2.2 service.... <br> 
+
+
+the configuration for app_dev and all_tests could be done withing PyCharm IDE. I use PyCharm Community Edition. Here is how active_data app_dev configuration would look like, as shown in this screenshot.
+<img src = app_dev_configuration_maggie.png> <br> <br>
+no changes to the logs tab.
+
+the configuration for all_tests could be done withint PyCharm IDE.  Here is how all_tests configuration would look like, as shown in this screenshot. 
+<img src = all_tests_configuration_maggie.png> <br> <br>
+no changes to the logs tab
