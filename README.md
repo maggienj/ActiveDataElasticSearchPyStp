@@ -83,3 +83,7 @@ no changes to the logs tab.
 the configuration for all_tests could be done withint PyCharm IDE.  Here is how all_tests configuration would look like, as shown in this screenshot. 
 <img src = all_tests_configuration_maggie.png> <br> <br>
 no changes to the logs tab
+
+tags: activedata , active_data , active data app_dev , all_tests , elasticsearch , es , elastic search , elastic_search , es5, es-head 
+this is an active_data  activedata setup repo.
+forked repo is at http://github.com/maggienj/activedata. 
