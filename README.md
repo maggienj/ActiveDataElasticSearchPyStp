@@ -56,8 +56,8 @@ As the next step, we will try to stop the Elastic Search 1.7.1 service and then 
 Here is how we stop the elastic search 1.7.1 service. <br>
 <img src = ElasticSearch171StopService.PNG> <br> <br>
 
-And then , downloaded this exe to check how it runs ... <br>
-https://github.com/rgl/elasticsearch-setup/releases/tag/v5.2.2 <br>
+<strike> And then , downloaded this exe to check how it runs ... <br>
+https://github.com/rgl/elasticsearch-setup/releases/tag/v5.2.2 </strike> <br>
 <br>
 <strike>full link to the exe <br>
 https://github.com/rgl/elasticsearch-setup/releases/download/v5.2.2/elasticsearch-5.2.2-jre-8u121-setup-64-bit.exe   </strike><br>
