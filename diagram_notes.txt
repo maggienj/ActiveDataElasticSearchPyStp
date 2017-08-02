@@ -1,10 +1,12 @@
-now that you see only the tests make indexes, we know Active Data does not make indexes, rather only queries the indexes that do exist
+now that you see only the tests make indexes, we know Active Data does not make indexes, 
+rather only queries the indexes that do exist
 
 
 #3 is good, #4 is good
 
 #6 should not mention the es_query for reference.  I know it happens, but it is just confusing.  
-The good thing about the system (the testing system, the active data system, and the mo-* libraries) is that you can add any extra properties to annotate the JSON document and everything still works.  
+The good thing about the system (the testing system, the active data system, and the mo-* libraries)
+is that you can add any extra properties to annotate the JSON document and everything still works.  
 the problem is those annotations may be confused for something important.
 
 #7 is good,
