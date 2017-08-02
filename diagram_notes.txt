@@ -1,0 +1,111 @@
+now that you see only the tests make indexes, we know Active Data does not make indexes, rather only queries the indexes that do exist
+
+
+#3 is good, #4 is good
+
+#6 should not mention the es_query for reference.  I know it happens, but it is just confusing.  The good thing about the system (the testing system, the active data system, and the mo-* libraries) is that you can add any extra properties to annotate the JSON document and everything still works.  the problem is those annotations may be confused for something important.
+
+#7 is good,
+
+#8 is incomplete, but you know that already:  As an exercise, you can
+try identifying something in one of the three modules (jx_base,
+jx_python, jx_elasticsearch) that is in the WRONG module.  I sincerely
+apologize for changing this part way though, plus making it unclear
+because it is still a mess.  The only thing we can do is document what
+it SHOULD look like.
+
+
+
+#9 is incomplete, as I suspect you already know.
+
+
+Like all good teachers, I try to lie as little as possible.  ActiveData
+does make some indexes, but they are only used for its own internal use,
+and they should be invisible to how ActiveData is used day-to-day.
+
+What is app dev (the ActiveData server) doing?
+
+The FIRST TIME ONLY
+
+* Make a saved_queries index
+
+FLOW WHEN TESTING
+
+Tests are special; they run VERY fast , they will not wait for
+ActiveData to collect metadata (record counts and cardinailty counts) on
+an index.
+
+1) A query arrives at ActiveData (app dev)
+2) is the save-query flag set?  if so save the query
+3) is the testing flag set? if so PAUSE, and signal the metadata system
+to collect metadata in the new index
+4) once metadata arrives, RESUME query processing
+5) decide what type of query this is (setop, aggop, or deepop)
+6) construct the es_query
+7) send es query
+8) Process the es_response; convert it from es-format to active data
+(list, table or, cube)
+9) send response back
+
+NORMAL FLOW
+
+For a normal query, active data will occasionally scan the existing
+indexes for metadata.  this is used whenever a query arrives. this is
+the same as the testinf flow, but steps 3 and 4 are skipped.
+
+
+
+
+
+#10
+what is the role of jx_usingES.py?
+
+This module is wrapping an ES index: it is a python object that is
+solely responsible for anything going to, or coming from an ES index.
+It has responsibility, but it does almost no work; it send the real work
+to the other modules.  In jx_usingES you can see it deciding which
+module to send the query to (setop, aggop, or deepop), which is the main
+thing it does.
+
+it does some other stuff, like it can handle `update()` commands, but
+they are hardly used.
+
+
+
+
+
+
+
+
+
+What does decoder.py do?
+
+When a query is sent to ES, a particular type of response is expected.
+For example, if a terms aggregation is sent, then we expect a response
+with "buckets" and each bucket to have a "key".  Each of those bucket
+keys are mapped to parts of an edge in the ActiveData response. There is
+one decoder for each type of edge (or groupby) we send to ActiveData:
+The decoder is responsible to making the correct ES query, and also
+interpreting the ES response for building the ActiveData response.
+
+The easiest decoder to understand is the SetDecoder.  Find a test with
+an edge with a specific domain (a domain with a set of values): run
+through the decoder to see what it does; both with making the proper ES
+query, but also building the response.
+
+#11 is good
+
+#12 - i do not understand the intent
+
+Overall, good work!  It was very nice to see ActiveData in pictures,
+rather than whatever I had in my head.  I believe documentation like
+this will help many others with understanding what ActiveData is, and
+how it does what it does.
+
+
+through TestEdge1.test_no_select; which is the best example of what
+decoders.py does.
+
+
+
+
